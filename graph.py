@@ -31,7 +31,8 @@ class BlogState(TypedDict, total=False):
     seo: dict
     html: str
     iterations: int
-    validation_errors: list  # ✅ FIXED TYPE
+    validation_errors: list
+    start_time: float
 
 
 # =========================

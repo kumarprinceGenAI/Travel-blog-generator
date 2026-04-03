@@ -738,3 +738,49 @@ During task with name 'improver' and id 'c27664a9-92a1-9d7d-69d3-56f9ed6b8112'
 2026-04-03 18:45:50,029 | INFO | Blog generation completed successfully
 2026-04-03 18:45:50,029 | INFO | Scheduler started (runs every 6 hours)
 2026-04-03 18:49:02,877 | INFO | Scheduler stopped manually
+2026-04-03 19:06:56,356 | INFO | Scheduler triggered blog generation
+2026-04-03 19:06:56,377 | INFO | Researcher started
+2026-04-03 19:06:56,377 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 19:07:09,459 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 19:07:09,515 | INFO | Selected Topic: The 3-Week Golden Triangle: A Budget Backpacking Itinerary for Northern Thailand, Laos & Cambodia | Score: 8.6
+2026-04-03 19:07:09,531 | INFO | Planner running for topic: The 3-Week Golden Triangle: A Budget Backpacking Itinerary for Northern Thailand, Laos & Cambodia
+2026-04-03 19:07:09,531 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 19:07:35,545 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 19:07:35,556 | INFO | Writer generating blog
+2026-04-03 19:07:35,557 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 19:08:09,383 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 19:08:09,423 | INFO | Reviewer evaluating blog
+2026-04-03 19:08:09,426 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 19:08:31,330 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 19:08:31,336 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 9, 'verdict': 'good', 'feedback': ['While the personal voice is strong, consider integrating more direct sensory descriptions (e.g., specific smells of street food, sounds of the Mekong) to further immerse the reader.', "For the 'Travel to Cambodia' section, a slightly more opinionated push towards either the flight or bus, perhaps with a more vivid description of the downsides of the 'grueling' option, could enhance the blog's 'strong opinions' voice.", "Explore the possibility of including 1-2 'controversial' or very non-obvious insights about overhyped activities or hidden gems that truly challenge common backpacker narratives, to push the uniqueness further."]}
+2026-04-03 19:08:31,340 | INFO | Avg Score: 8.625 | Iterations: 0
+2026-04-03 19:08:31,346 | INFO | Improver refining blog
+2026-04-03 19:08:31,347 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 19:09:08,801 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 19:09:08,837 | INFO | Reviewer evaluating blog
+2026-04-03 19:09:08,837 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 19:09:29,073 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 19:09:29,099 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 9.0, 'readability_score': 8.5, 'uniqueness_score': 9.0, 'verdict': 'good', 'feedback': ['The blog demonstrates exceptional content quality by providing a highly detailed, practical, and useful 3-week itinerary specifically tailored for Indian backpackers on a ₹60,000 budget, including specific costs and actionable advice.', "Uniqueness is a major strength, with well-integrated 'Strongest Opinions,' 'Unconventional Wisdom,' and a 'Blunders & Savvy Indian Traveler Hacks' section that offers genuinely non-obvious and valuable insights (e.g., advising a flight over a grueling bus journey, or embracing 'mundane magic' over 'must-sees'). It feels authentic and expert-level.", 'SEO quality is outstanding due to its clear intent, excellent keyword usage (especially the consistent use of ₹), superb structural organization with clear headings, and a comprehensive FAQ section, ensuring high discoverability and user experience.', 'Readability is very strong, maintained by an engaging personal tone, clear language, effective use of bolding, and a logical flow that guides the reader seamlessly through the itinerary and advice.', 'While the budget breakdown is excellent, a concise visual summary (e.g., a small table or infographic) of estimated daily/weekly expenses could further enhance quick reference for budget-conscious readers.', "Consider adding a brief, dedicated 'What to Pack' checklist, expanding on the 'Overpacking' mistake, to provide even more specific guidance for first-time backpackers in tropical climates."]}
+2026-04-03 19:09:29,099 | INFO | Avg Score: 8.75 | Iterations: 1
+2026-04-03 19:09:29,105 | INFO | Improver refining blog
+2026-04-03 19:09:29,107 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 19:10:10,168 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 19:10:10,198 | INFO | Reviewer evaluating blog
+2026-04-03 19:10:10,198 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 19:10:28,988 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 19:10:28,990 | INFO | Reviewer scores: {'content_score': 9.5, 'seo_score': 9.5, 'readability_score': 9, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ['While the ₹60,000 budget is well-detailed, consider explicitly recommending a small, separate emergency contingency fund (perhaps 5-10% of the budget) to account for unforeseen expenses or minor splurges, even for the most disciplined budget traveler.', "Though the article clearly defines the 'Golden Triangle' in the second paragraph, a very concise one-liner in the initial hook could instantly orient readers unfamiliar with this specific regional grouping of Northern Thailand, Laos, and Cambodia."]}
+2026-04-03 19:10:28,990 | INFO | Avg Score: 9.375 | Iterations: 2
+2026-04-03 19:10:28,990 | INFO | High-quality blog → skipping improver
+2026-04-03 19:10:28,990 | INFO | SEO started
+2026-04-03 19:10:28,992 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 19:10:40,865 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 19:10:40,865 | INFO | Rendering HTML
+2026-04-03 19:10:40,935 | INFO | Saving blog to database
+2026-04-03 19:10:40,945 | INFO | Blog saved to DB
+2026-04-03 19:10:40,955 | INFO | Metrics | Score: 9.375 | Iter: 2 | Len: 4230 | Errors: 0 | Time: 224.58s
+2026-04-03 19:10:40,955 | INFO | Blog saved to DB
+2026-04-03 19:10:40,955 | INFO | Generated Topic: The 3-Week Golden Triangle: A Budget Backpacking Itinerary for Northern Thailand, Laos & Cambodia
+2026-04-03 19:10:40,961 | INFO | HTML length: 29388
+2026-04-03 19:10:40,962 | INFO | Blog generation completed successfully
+2026-04-03 19:10:40,962 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 19:10:53,595 | INFO | Scheduler stopped manually
