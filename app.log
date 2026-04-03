@@ -1,0 +1,740 @@
+2026-04-03 00:22:27,276 | INFO | Running Scheduled blog generation....
+
+2026-04-03 00:22:27,293 | INFO | Researcher Started
+2026-04-03 00:22:27,293 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 00:22:35,243 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 00:22:35,285 | INFO | Planner  running fot topic Escaping the Heat: 5 Budget-Friendly Hill Stations in North India for a Monsoon Retreat
+2026-04-03 00:22:35,285 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:32:15,574 | INFO | Running Scheduled blog generation....
+
+2026-04-03 11:32:15,574 | INFO | Researcher Started
+2026-04-03 11:32:15,574 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:32:26,342 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 11:32:26,380 | INFO | Planner  running fot topic Winter Escapes in Rajasthan: Beyond Jaipur and Jodhpur to the Desert's Heart
+2026-04-03 11:32:26,380 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:33:05,587 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 11:40:23,445 | INFO | Running Scheduled blog generation....
+
+2026-04-03 11:40:23,448 | INFO | Researcher Started
+2026-04-03 11:40:23,448 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:40:31,946 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 11:40:31,960 | INFO | Planner  running fot topic Monsoon Magic: Unveiling Kerala's Backwater Secrets on a Budget
+2026-04-03 11:40:31,960 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:40:59,326 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 11:40:59,333 | INFO | Writer generating blog
+2026-04-03 11:40:59,333 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:41:33,623 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 11:41:33,628 | INFO | Reviewer evaluating blog
+2026-04-03 11:41:33,628 | INFO | scores: None
+2026-04-03 11:41:33,630 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:41:48,838 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 11:41:48,844 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:42:17,308 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 11:42:17,310 | INFO | Avg Score: 7.375, Iterations: 0
+2026-04-03 11:42:17,312 | INFO | Improver refining blog
+2026-04-03 11:42:17,314 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:42:54,747 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 11:42:54,751 | INFO | Reviewer evaluating blog
+2026-04-03 11:42:54,751 | INFO | scores: {'content_score': 7.0, 'seo_score': 7.0, 'readability_score': 8.5, 'uniqueness_score': 7.0, 'verdict': 'needs_improvement', 'feedback': ["The blog's overly positive presentation, without a balanced discussion of potential travel downsides, significantly detracts from its credibility and expert authority, rendering the content somewhat generic and lacking depth.", 'While responsible travel is briefly touched upon, the lack of specific, actionable sustainable practices beyond general advice prevents the blog from truly standing out as an expert resource or offering unique insights.', 'Basic SEO is present, but the absence of a dedicated FAQ section and insufficient integration of niche, long-tail keywords limits its competitive reach and visibility in detailed search queries.', "Overall, the content feels safe and lacks the strong opinions or non-obvious insights required to truly compete with top-tier travel blogs and achieve an 'expert-level' status."]}
+2026-04-03 11:42:54,752 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:43:10,863 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 11:43:10,863 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:43:12,883 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:43:25,148 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 11:43:25,150 | INFO | Avg Score: 9.0, Iterations: 1
+2026-04-03 11:43:25,151 | INFO | Seo Started
+2026-04-03 11:43:25,152 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 11:43:34,694 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 11:43:34,768 | INFO | Saving full blog...
+2026-04-03 11:43:34,784 | INFO | Blog generation completed
+
+2026-04-03 11:43:34,784 | INFO | Scheduler started... running every 6 hours
+
+2026-04-03 12:08:10,510 | INFO | Running Scheduled blog generation....
+
+2026-04-03 12:08:10,533 | INFO | Researcher Started
+2026-04-03 12:08:10,533 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:08:20,870 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:08:20,877 | INFO | 
+ RAW RESPONSE:
+ ```json
+{
+  "topics": [
+    {
+      "title": "Monsoon Magic in the Backwaters: Why Kerala is Your Unexpected Green Season Escape",
+      "reason": "Leverages the unique beauty and tranquility of Kerala during the monsoon (July-September), a season often overlooked but perfect for Ayurvedic treatments, lush landscapes, and fewer crowds. Highlights a seasonal trend and offers a fresh perspective on a popular Indian state.",
+      "target_audience": "Wellness travelers, nature lovers, those seeking tranquility, mid-budget to luxury travelers."
+    },
+    {
+      "title": "Rajasthan on a Royal Dime: How to Explore India's Desert Kingdom Without Breaking the Bank",
+      "reason": "Rajasthan is an immensely popular destination. This topic focuses on making its rich cultural and historical experiences accessible for budget travelers, covering practical tips for accommodation, food, and transport in a region often perceived as expensive. Strong budget travel focus.",
+      "target_audience": "Young backpackers, culture enthusiasts, students, first-time India travelers on a budget."
+    },
+    {
+      "title": "Sikkim Unveiled: India's Himalayan Jewel for Adventure and Serenity Seekers",
+      "reason": "Sikkim offers stunning mountain landscapes, serene Buddhist monasteries, and incredible trekking opportunities, yet it's less frequented by international tourists compared to other Indian states. Appeals to adventure and nature lovers seeking something off-the-beaten-path and is a true hidden gem.",
+      "target_audience": "Adventure tourists, trekkers, spiritual travelers, nature photographers, those seeking off-the-beaten-path experiences."
+    },
+    {
+      "title": "Beach Bliss & Backpacking Bucks: Your Guide to Thailand's Andaman Coast During Dry Season",
+      "reason": "Focuses on the ideal time (dry season: November-April) to visit Thailand's popular Andaman Coast (Phuket, Krabi, Phi Phi) with a strong emphasis on budget-friendly travel tips for island hopping and activities. Combines seasonal travel with popular destinations and budget appeal.",
+      "target_audience": "Backpackers, young couples, beach enthusiasts, first-time Southeast Asia travelers, budget-conscious adventurers."
+    },
+    {
+      "title": "Beyond Angkor: Discovering Cambodia's Untouched Charms & Authentic Local Experiences",
+      "reason": "While Angkor Wat is iconic, this topic encourages travelers to explore beyond, focusing on lesser-known areas like Battambang, Kep, or Kampot. It highlights cultural immersion, sustainable tourism, and authentic local life, appealing to those looking for hidden gems and deeper cultural experiences.",
+      "target_audience": "Experienced travelers, culture seekers, slow travelers, ethical tourists, those looking for authentic experiences away from crowds."
+    }
+  ]
+}
+```
+2026-04-03 12:08:20,877 | INFO | Selected Topic: Monsoon Magic in the Backwaters: Why Kerala is Your Unexpected Green Season Escape
+2026-04-03 12:08:20,881 | INFO | Planner running for topic Monsoon Magic in the Backwaters: Why Kerala is Your Unexpected Green Season Escape
+2026-04-03 12:08:20,881 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:08:44,041 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:08:44,041 | INFO | Writer generating blog
+2026-04-03 12:08:44,041 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:09:17,950 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:09:17,950 | INFO | Reviewer evaluating blog
+2026-04-03 12:09:17,950 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:09:41,162 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:09:41,162 | INFO | scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 8.5, 'verdict': 'good', 'feedback': ['While opinions are strong, exploring slightly more controversial aspects or alternative viewpoints (e.g., specific downsides of monsoon, beyond general tips, and how they are mitigated) could add another layer of nuanced insight.', "The detailed budget is excellent; however, a brief, explicit comparison to peak season costs might further highlight the 'monsoon advantage' beyond just 'attractive rates'.", "The itinerary is comprehensive, but integrating more explicit 'flexibility points' or alternative activities directly within the daily plan, rather than solely as a general tip, could further empower readers to adapt to weather changes seamlessly."]}
+2026-04-03 12:09:41,162 | INFO | Avg Score: 8.5, Iterations: 0
+2026-04-03 12:09:41,168 | INFO | Improver refining blog
+2026-04-03 12:09:41,169 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:10:06,428 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:10:06,428 | INFO | Reviewer evaluating blog
+2026-04-03 12:10:06,430 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:10:30,513 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:10:30,529 | INFO | scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 9, 'verdict': 'good', 'feedback': ["While the itinerary is robust, a high-level summary at the outset of the 'Your Backwater Blueprint' section would significantly enhance scannability for busy readers seeking a quick overview before delving into the daily specifics.", "The blog excels in offering general cost estimates and types of experiences. To truly solidify its 'insider' claim and provide an even more expert-level recommendation, consider naming one or two specific, highly-recommended boutique homestays, unique local eateries, or reputable Ayurvedic centers, rather than relying solely on general categories or price ranges.", "The blog's strength is its ability to challenge common misconceptions. For an even stronger competitive edge, consider dedicatedly busting one or two minor, yet widely held, 'monsoon myths' in greater detail, offering specific counter-evidence or alternative perspectives that others miss."]}
+2026-04-03 12:10:30,530 | INFO | Avg Score: 8.625, Iterations: 1
+2026-04-03 12:10:30,532 | INFO | Improver refining blog
+2026-04-03 12:10:30,532 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:11:02,162 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:11:02,169 | INFO | Reviewer evaluating blog
+2026-04-03 12:11:02,169 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:11:19,942 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:11:19,949 | INFO | scores: {'content_score': 8.8, 'seo_score': 8.7, 'readability_score': 8.9, 'uniqueness_score': 9.0, 'verdict': 'good', 'feedback': ["To elevate content further, consider integrating more local voices or interviews beyond personal experience, providing a deeper 'expert' perspective from residents or local guides about monsoon life.", "While the opinions are strong, exploring a specific, often-overlooked micro-region or lesser-known backwater gem in Kerala, with a unique local experience, could amplify the 'controversial/non-obvious insights' to an even higher degree.", "The itinerary is comprehensive, but integrating a 'Plan B' for each day in case of exceptionally heavy rain (beyond general flexibility) would add an ultra-practical, expert layer to the monsoon-specific advice."]}
+2026-04-03 12:11:19,949 | INFO | Avg Score: 8.85, Iterations: 2
+2026-04-03 12:11:19,949 | INFO | Seo Started
+2026-04-03 12:11:19,949 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:11:30,424 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:11:30,480 | INFO | Saving full blog...
+2026-04-03 12:11:30,498 | INFO | Blog saved to DB
+2026-04-03 12:11:30,500 | INFO | Blog generation completed
+
+2026-04-03 12:11:30,500 | INFO | Scheduler started... running every 6 hours
+
+2026-04-03 12:40:02,901 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:40:10,703 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:40:10,710 | INFO | Researcher started
+2026-04-03 12:40:10,711 | INFO | Selected Topic: Escape the Heat: Discovering India's Coolest Hill Stations for Summer 2024
+2026-04-03 12:40:10,714 | INFO | Planner running for topic: Escape the Heat: Discovering India's Coolest Hill Stations for Summer 2024
+2026-04-03 12:40:10,715 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:40:41,377 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:40:41,383 | INFO | Writer generating blog
+2026-04-03 12:40:41,384 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:41:13,943 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:41:13,949 | INFO | Reviewer evaluating blog
+2026-04-03 12:41:13,949 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:41:31,131 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:41:31,140 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 9, 'uniqueness_score': 9, 'verdict': 'good', 'feedback': ["The 'Solo Travel Pitfalls & Insider Hacks' section is exceptionally strong, offering genuinely useful and non-obvious insights like carrying two SIMs for mountain travel, which significantly enhances practical value and uniqueness.", 'The inclusion of specific, real-world cost estimates for buses, accommodation, and daily expenses adds incredible practical depth and usefulness for budget-conscious solo travelers.', "The blog's conversational, highly personal tone, peppered with explicit 'My Strong Opinion' sections and personal anecdotes, successfully creates an engaging and unique voice that stands out from generic travel content.", 'The clear, logical structure with effective use of headings and the comprehensive FAQ section are excellent for both readability and search engine optimization, addressing potential reader queries proactively.']}
+2026-04-03 12:41:31,143 | INFO | Avg Score: 8.75 | Iterations: 0
+2026-04-03 12:41:31,144 | INFO | Improver refining blog
+2026-04-03 12:41:31,145 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:41:58,845 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:41:58,845 | INFO | Reviewer evaluating blog
+2026-04-03 12:41:58,845 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:42:14,687 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:42:14,692 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 9, 'verdict': 'good', 'feedback': ["While the two itineraries are detailed and excellent, including a third, slightly more offbeat 'coolest hill' option could further enhance the blog's content and appeal to a broader range of solo adventurers.", 'Integrating the budget breakdowns more explicitly within the daily itinerary sections, rather than primarily in the FAQ, would provide more immediate practical value for readers planning their trip.', 'Consider adding a brief summary table for each itinerary (e.g., total estimated cost, travel time from major cities) to allow for quick comparison and decision-making.']}
+2026-04-03 12:42:14,693 | INFO | Avg Score: 8.625 | Iterations: 1
+2026-04-03 12:42:14,697 | INFO | Improver refining blog
+2026-04-03 12:42:14,698 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:42:49,945 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:42:49,948 | INFO | Reviewer evaluating blog
+2026-04-03 12:42:49,950 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:43:10,902 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:43:10,902 | INFO | Reviewer scores: {'content_score': 9.0, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 9.0, 'verdict': 'good', 'feedback': ["The 'My Strong Opinion' sections are highly effective and valuable; however, consider integrating some of these distinctive insights more subtly within the main narrative flow for a less interrupted reading experience.", "While the 'Estimated 3-Day Budget' for each option provides excellent ranges, a brief concluding remark on how specific choices (e.g., accommodation type, food venues) directly influence staying at the lower or higher end of these estimates could further empower budget-conscious travelers."]}
+2026-04-03 12:43:10,902 | INFO | Avg Score: 8.75 | Iterations: 2
+2026-04-03 12:43:10,902 | INFO | FINAL RESULT | Score: 8.75 | Iterations: 2
+2026-04-03 12:43:10,902 | INFO | Seo Started
+2026-04-03 12:43:10,902 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:43:26,137 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:43:26,271 | INFO | Saving blog to database
+2026-04-03 12:43:26,283 | INFO | Blog saved to DB
+2026-04-03 12:43:26,283 | INFO | Blog saved to DB
+2026-04-03 12:46:43,154 | INFO | Scheduler triggered blog generation
+2026-04-03 12:46:43,156 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:46:50,855 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:46:50,856 | INFO | Researcher started
+2026-04-03 12:46:50,858 | INFO | Selected Topic: Monsoon Magic: Uncovering Budget-Friendly Retreats in Vietnam & Cambodia
+2026-04-03 12:46:50,858 | INFO | Planner running for topic: Monsoon Magic: Uncovering Budget-Friendly Retreats in Vietnam & Cambodia
+2026-04-03 12:46:50,860 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:47:07,968 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:47:07,972 | INFO | Writer generating blog
+2026-04-03 12:47:07,973 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:47:30,752 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:47:30,758 | INFO | Reviewer evaluating blog
+2026-04-03 12:47:30,760 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:47:49,159 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:47:49,159 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 9.0, 'verdict': 'good', 'feedback': ['The blog demonstrates exceptional uniqueness by challenging conventional travel wisdom and providing a contrarian, yet well-supported, perspective on monsoon travel in Southeast Asia.', 'Content quality is very high, offering specific, practical advice tailored precisely for Indian budget travelers, including highly useful INR budget breakdowns and relevant cultural comparisons.', "The personal anecdotes, strong opinions (e.g., 'Angkor Wat in monsoon is superior'), and non-obvious insights significantly enhance engagement and provide genuine value, making the blog feel authentic and expert-level.", 'While excellent, consider adding a brief section on specific monsoon safety protocols beyond general weather checks, such as what to do in case of flash floods or prolonged transport delays, to further prepare readers.', 'The SEO is well-executed with clear intent, excellent keyword usage, and a robust structure, including a comprehensive FAQ section, optimizing it effectively for its niche target audience.']}
+2026-04-03 12:47:49,161 | INFO | Avg Score: 8.625 | Iterations: 0
+2026-04-03 12:47:49,161 | INFO | Improver refining blog
+2026-04-03 12:47:49,162 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:48:09,824 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:48:09,830 | INFO | Reviewer evaluating blog
+2026-04-03 12:48:09,831 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:48:27,878 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:48:27,880 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 8.5, 'verdict': 'good', 'feedback': ["The blog's core strength is its bold, contrarian stance on monsoon travel, actively challenging conventional wisdom with convincing arguments and personal anecdotes.", 'It delivers high practical value with specific, actionable advice tailored for Indian travelers, including budget breakdowns in INR, visa information, and country-specific hacks.', 'The highly engaging, conversational tone combined with strong personal opinions and vivid descriptions makes for a truly compelling and non-generic read.', "To push towards exceptional (9+), consider weaving in a more explicit, day-by-day sample itinerary that demonstrates how to implement the 'slow travel' philosophy effectively during monsoon, offering a tangible plan for readers."]}
+2026-04-03 12:48:27,881 | INFO | Avg Score: 8.5 | Iterations: 1
+2026-04-03 12:48:27,881 | INFO | Improver refining blog
+2026-04-03 12:48:27,882 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:48:56,092 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:48:56,098 | INFO | Reviewer evaluating blog
+2026-04-03 12:48:56,099 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:49:13,945 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:49:13,945 | INFO | Reviewer scores: {'content_score': 9.0, 'seo_score': 8.5, 'readability_score': 9.0, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ["The depth and practical value for the specific 'Indian budget traveler' niche are exceptional, offering detailed budget breakdowns and highly actionable tips.", 'The blog successfully creates a compelling, unique voice through strong, opinionated statements and personal anecdotes, which makes it stand out significantly from generic travel content.', 'While highly engaging, the comprehensive length of the post might benefit from a very brief, high-level summary at the end to re-emphasize key takeaways for readers who prefer to scan.']}
+2026-04-03 12:49:13,949 | INFO | Avg Score: 9.0 | Iterations: 2
+2026-04-03 12:49:13,949 | INFO | FINAL RESULT | Score: 9.0 | Iterations: 2
+2026-04-03 12:49:13,950 | INFO | SEO started
+2026-04-03 12:49:13,951 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 12:49:29,659 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 12:49:29,735 | INFO | Saving blog to database
+2026-04-03 12:49:29,756 | INFO | Blog saved to DB
+2026-04-03 12:49:29,756 | INFO | Blog saved to DB
+2026-04-03 12:49:29,761 | INFO | Blog generation completed successfully
+2026-04-03 12:49:29,762 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 13:07:32,573 | INFO | Scheduler triggered blog generation
+2026-04-03 13:07:32,589 | INFO | Researcher started
+2026-04-03 13:07:32,589 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:07:42,449 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:07:42,457 | INFO | Selected Topic: Monsoon Magic: 5 Unforgettable Indian Destinations to Embrace the Rains (Without Getting Washed Out!)
+2026-04-03 13:07:42,457 | INFO | Planner running for topic: Monsoon Magic: 5 Unforgettable Indian Destinations to Embrace the Rains (Without Getting Washed Out!)
+2026-04-03 13:07:42,459 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:08:22,862 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:08:22,868 | INFO | Writer generating blog
+2026-04-03 13:08:22,868 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:09:02,915 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:09:02,922 | INFO | Reviewer evaluating blog
+2026-04-03 13:09:02,922 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:09:22,537 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:09:22,586 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 9.0, 'verdict': 'good', 'feedback': ["The blog's core premise of embracing monsoon travel as a budget-friendly and authentic experience is highly original and expertly executed.", "The strong, opinionated voice throughout the article (e.g., 'monsoon Goa is vastly superior', 'My bold opinion: generally, no' for Kerala houseboats) provides genuinely non-generic and valuable insights.", 'Exceptional practical value is delivered through detailed INR cost breakdowns, specific local transport hacks, and actionable advice perfectly tailored for the Indian traveler.', "The 'Monsoon Travel Truths' and 'Making Every Rupee Count' sections offer invaluable tips, including avoiding common mistakes and providing non-obvious advice that truly sets it apart.", 'An engaging, conversational tone combined with a clear, well-structured format makes the content highly readable and enjoyable, maintaining reader interest throughout.', "For future enhancements, consider integrating embedded maps or quick 'at-a-glance' summary boxes for each destination to further elevate the user experience."]}
+2026-04-03 13:09:22,586 | INFO | Avg Score: 8.625 | Iterations: 0
+2026-04-03 13:09:22,586 | INFO | Improver refining blog
+2026-04-03 13:09:22,586 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:09:58,344 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:09:58,350 | INFO | Reviewer evaluating blog
+2026-04-03 13:09:58,350 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:10:15,971 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:10:15,975 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 9.0, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ["While excellent, the blog could further enhance its 'hidden gems' promise by featuring one or two genuinely offbeat or less-traveled monsoon destinations, rather than focusing on popular spots from a unique angle.", 'The budget breakdown is detailed, but could be presented in a more visually scannable format (e.g., a small table or infographic) for quick reference, maximizing utility for the budget-conscious traveler.', 'Consider adding a quick summary box at the very beginning with key takeaways for readers who prefer to skim, given the comprehensive (and lengthy) nature of the post.']}
+2026-04-03 13:10:15,976 | INFO | Avg Score: 8.875 | Iterations: 1
+2026-04-03 13:10:15,976 | INFO | FINAL RESULT | Score: 8.875 | Iterations: 1
+2026-04-03 13:10:15,978 | INFO | SEO started
+2026-04-03 13:10:15,979 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:10:28,889 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:10:28,895 | INFO | Rendering HTML
+2026-04-03 13:10:28,964 | INFO | Saving blog to database
+2026-04-03 13:10:28,979 | INFO | Blog saved to DB
+2026-04-03 13:10:28,979 | INFO | Blog saved to DB
+2026-04-03 13:10:28,984 | INFO | Blog generation completed successfully
+2026-04-03 13:10:28,984 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 13:20:00,439 | INFO | Scheduler triggered blog generation
+2026-04-03 13:20:00,449 | INFO | Researcher started
+2026-04-03 13:20:00,456 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:20:07,573 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:20:07,587 | INFO | Selected Topic: Monsoon Magic: 5 Untouched Hill Stations in India Perfect for a Rainy Escape
+2026-04-03 13:20:07,594 | INFO | Planner running for topic: Monsoon Magic: 5 Untouched Hill Stations in India Perfect for a Rainy Escape
+2026-04-03 13:20:07,597 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:20:40,699 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:20:40,707 | INFO | Writer generating blog
+2026-04-03 13:20:40,707 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:21:24,217 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:21:24,225 | INFO | Reviewer evaluating blog
+2026-04-03 13:21:24,226 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:21:39,147 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:21:39,149 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 9, 'verdict': 'good', 'feedback': ["To push it even further, consider weaving in a very short, evocative personal anecdote specific to *each* destination, reinforcing the 'solo' and 'untouched' experience on a micro-level.", "While 'Real-world problems' are excellent, adding one or two highly niche, 'local secret' tips (e.g., a specific hidden viewpoint or a unique local dish not widely known) for each location would elevate the 'insider' feel."]}
+2026-04-03 13:21:39,150 | INFO | Avg Score: 8.625 | Iterations: 0
+2026-04-03 13:21:39,150 | INFO | Improver refining blog
+2026-04-03 13:21:39,152 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:22:13,275 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:22:13,291 | INFO | Reviewer evaluating blog
+2026-04-03 13:22:13,291 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:22:35,128 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:22:35,145 | INFO | Reviewer scores: {'content_score': 8.8, 'seo_score': 8.5, 'readability_score': 8.7, 'uniqueness_score': 9.0, 'verdict': 'good', 'feedback': ['While the blog excels in vivid description, a top-tier travel blog competing on Google requires exceptional visual support. Integrating high-quality, authentic photography that truly captures the unique misty, rain-soaked landscapes and solitary experiences described would significantly elevate the user experience.', "For solo travelers venturing into truly 'untouched' locations, incorporating simple, interactive maps (e.g., showing key transit points, general area, and 'local secret' spots) would enhance practicality and trust.", "To further solidify the 'authentic connection' promise, expand on practical tips for engaging with local cultures beyond cuisine, such as specific phrases to learn, local etiquette, or community events unique to monsoon season in those regions."]}
+2026-04-03 13:22:35,149 | INFO | Avg Score: 8.75 | Iterations: 1
+2026-04-03 13:22:35,150 | INFO | FINAL RESULT | Score: 8.75 | Iterations: 1
+2026-04-03 13:22:35,179 | INFO | SEO started
+2026-04-03 13:22:35,179 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 13:22:50,627 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 13:22:50,627 | INFO | Rendering HTML
+2026-04-03 13:22:50,791 | INFO | Saving blog to database
+2026-04-03 13:22:50,824 | INFO | Blog saved to DB
+2026-04-03 13:22:50,824 | INFO | Blog saved to DB
+2026-04-03 13:22:50,824 | INFO | Blog generation completed successfully
+2026-04-03 13:22:50,824 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 14:12:42,483 | INFO | Scheduler triggered blog generation
+2026-04-03 14:12:42,497 | INFO | Researcher started
+2026-04-03 14:12:42,497 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:12:52,106 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:12:52,114 | INFO | Selected Topic: Chasing Winter Sun: A Budget Backpacking Guide to North India's Golden Triangle & Varanasi
+2026-04-03 14:12:52,116 | INFO | Planner running for topic: Chasing Winter Sun: A Budget Backpacking Guide to North India's Golden Triangle & Varanasi
+2026-04-03 14:12:52,116 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:13:13,435 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:13:13,435 | INFO | Writer generating blog
+2026-04-03 14:13:13,443 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:13:49,997 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:13:50,003 | INFO | Reviewer evaluating blog
+2026-04-03 14:13:50,003 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:14:10,545 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:14:10,545 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 9.0, 'verdict': 'good', 'feedback': ["While the 'Strong Opinion Alert' sections are a great addition, occasionally elaborating slightly more on the *why* behind skipping certain attractions for a budget backpacker (e.g., Red Fort interior) could further strengthen your arguments and conviction.", "Consider adding a small, dedicated 'Key Takeaways' or 'My Top Memory' section at the end of each city's itinerary to provide a concise personal reflection and enhance engagement.", "The budget breakdown is excellent; perhaps a summarized 'Total Estimated Trip Cost' range early on, consolidating daily averages and inter-city travel, would be beneficial for quick reader comprehension."]}
+2026-04-03 14:14:10,545 | INFO | Avg Score: 8.625 | Iterations: 0
+2026-04-03 14:14:10,545 | INFO | Improver refining blog
+2026-04-03 14:14:10,545 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:14:40,959 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:14:40,959 | INFO | Reviewer evaluating blog
+2026-04-03 14:14:40,959 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:14:58,567 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:14:58,567 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 9.0, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ['The blog would benefit from a Table of Contents (internal anchor links) for better navigation, especially given the length and detailed day-by-day itinerary. This is a standard feature in top-tier travel blogs.', 'While the budget explicitly excludes flights to Delhi, a brief, high-level estimate or mention of flight costs could offer a more comprehensive financial picture for readers planning their total trip expenses.', "Consider opportunities for internal linking to related hypothetical blog posts (e.g., 'A Deep Dive into Delhi Street Food' or 'Mastering IRCTC Bookings') to enhance SEO and keep readers engaged longer within the site.", "Some 'Strong Opinion Alert' sections, while effective and adding personality, could occasionally be integrated more subtly into the narrative, allowing the insights to stand on their own without the explicit tag."]}
+2026-04-03 14:14:58,567 | INFO | Avg Score: 8.875 | Iterations: 1
+2026-04-03 14:14:58,567 | INFO | FINAL RESULT | Score: 8.875 | Iterations: 1
+2026-04-03 14:14:58,585 | INFO | SEO started
+2026-04-03 14:14:58,585 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:15:12,703 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:15:12,704 | INFO | Rendering HTML
+2026-04-03 14:15:12,779 | INFO | Saving blog to database
+2026-04-03 14:15:12,796 | INFO | Blog saved to DB
+2026-04-03 14:15:12,796 | INFO | Blog saved to DB
+2026-04-03 14:15:12,801 | INFO | Blog generation completed successfully
+2026-04-03 14:15:12,801 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 14:21:37,257 | INFO | Scheduler stopped manually
+2026-04-03 14:43:05,153 | INFO | Scheduler triggered blog generation
+2026-04-03 14:43:05,170 | INFO | Researcher started
+2026-04-03 14:43:05,172 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:43:13,539 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:43:13,539 | INFO | Selected Topic: Monsoon Magic: Experiencing Kerala's Lush Beauty on a Budget
+2026-04-03 14:43:13,539 | INFO | Planner running for topic: Monsoon Magic: Experiencing Kerala's Lush Beauty on a Budget
+2026-04-03 14:43:13,539 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:43:42,718 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:43:42,725 | INFO | Writer generating blog
+2026-04-03 14:43:42,725 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:44:14,866 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:44:14,896 | INFO | Reviewer evaluating blog
+2026-04-03 14:44:14,900 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:44:33,735 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:44:33,742 | INFO | Reviewer scores: {'content_score': 9, 'seo_score': 8.5, 'readability_score': 9, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ['While the content is exceptionally detailed and practical, a brief section on essential local phrases or emergency contact numbers specific to Kerala could enhance immediate on-the-ground preparedness for travelers.', 'The SEO structure is strong with clear headings and keyword usage. To push it even further, consider integrating more internal linking to other relevant posts (if available) or external links to official resources like KSRTC or state tourism websites.', "The blog's engaging tone and personal anecdotes are a major strength. For an even wider appeal, exploring specific options or considerations tailored for solo female travelers during the monsoon could add another layer of niche value.", 'The uniqueness is outstanding due to the strong opinions and real experiences. To maintain this edge, consistently update details like bus fares and entry fees, as these are critical for a budget-focused post and can change frequently.']}
+2026-04-03 14:44:33,742 | INFO | Avg Score: 9.0 | Iterations: 0
+2026-04-03 14:44:33,742 | INFO | Improver refining blog
+2026-04-03 14:44:33,742 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:45:01,859 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:45:01,881 | INFO | Reviewer evaluating blog
+2026-04-03 14:45:01,881 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:45:21,075 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:45:21,100 | INFO | Avg Score: 8.775 | Iterations: 1
+2026-04-03 14:45:21,100 | INFO | FINAL RESULT | Score: 8.775 | Iterations: 1
+2026-04-03 14:45:21,116 | INFO | SEO started
+2026-04-03 14:45:21,116 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 14:45:31,343 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 14:45:31,343 | INFO | Rendering HTML
+2026-04-03 14:45:31,439 | INFO | Saving blog to database
+2026-04-03 14:45:31,456 | INFO | Blog saved to DB
+2026-04-03 14:45:31,456 | INFO | Blog saved to DB
+2026-04-03 14:45:31,462 | INFO | Blog generation completed successfully
+2026-04-03 14:45:31,462 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 14:45:48,734 | INFO | Scheduler stopped manually
+2026-04-03 15:31:16,477 | INFO | Scheduler triggered blog generation
+2026-04-03 15:31:16,483 | INFO | Researcher started
+2026-04-03 15:31:16,483 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:31:28,862 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:31:28,875 | INFO | Selected Topic: Your First Ha Giang Loop: A Practical Beginner's Guide to Safety, Rentals & Scenic Stops | Score: 9.1
+2026-04-03 15:31:28,875 | INFO | Planner running for topic: Your First Ha Giang Loop: A Practical Beginner's Guide to Safety, Rentals & Scenic Stops
+2026-04-03 15:31:28,875 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:31:59,733 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:31:59,739 | INFO | JSON PARSE FAILED
+2026-04-03 15:31:59,739 | WARNING | planner failed (attempt 1/3) | Error: Unable to parse JSON
+2026-04-03 15:32:01,742 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:32:22,916 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:32:49,321 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:32:49,327 | INFO | Writer generating blog
+2026-04-03 15:32:49,327 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:33:20,027 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:33:20,027 | WARNING | writer failed (attempt 1/3) | Error: Blog missing structure (headings)
+2026-04-03 15:33:22,035 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:33:58,520 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:33:58,530 | WARNING | writer failed (attempt 2/3) | Error: Missing 'Insider Tips' section | Missing 'Mistakes to Avoid' section
+2026-04-03 15:34:00,532 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:34:34,745 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:34:34,746 | WARNING | writer failed (attempt 3/3) | Error: Missing 'Insider Tips' section | Missing 'Mistakes to Avoid' section
+2026-04-03 15:34:34,746 | ERROR | writer failed after 3 attempts
+Traceback (most recent call last):
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\retry.py", line 13, in retry
+    validate(result)
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\graph.py", line 104, in <lambda>
+    validate_content_quality(x)
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\content_validator.py", line 25, in validate_content_quality
+    raise ValueError(" | ".join(errors))
+ValueError: Missing 'Insider Tips' section | Missing 'Mistakes to Avoid' section
+2026-04-03 15:34:34,752 | INFO | Reviewer evaluating blog
+2026-04-03 15:34:34,752 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:34:39,505 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:34:39,505 | INFO | Reviewer scores: {'content_score': 0, 'seo_score': 0, 'readability_score': 0, 'uniqueness_score': 0, 'verdict': 'needs_improvement', 'feedback': ['Blog content was not provided for evaluation.']}
+2026-04-03 15:34:39,512 | INFO | Avg Score: 0.0 | Iterations: 0
+2026-04-03 15:34:39,512 | INFO | Improver refining blog
+2026-04-03 15:34:39,512 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:34:58,527 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:35:00,550 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:35:20,186 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:35:22,194 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:35:43,909 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:35:43,931 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 15:38:19,668 | INFO | Scheduler stopped manually
+2026-04-03 15:56:59,990 | INFO | Scheduler triggered blog generation
+2026-04-03 15:56:59,994 | INFO | Researcher started
+2026-04-03 15:56:59,994 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:57:11,364 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:57:11,378 | INFO | Selected Topic: Solo Female Travel in Southeast Asia: Essential Safety Tips & Empowering Itineraries for First-Timers | Score: 8.6
+2026-04-03 15:57:11,380 | INFO | Planner running for topic: Solo Female Travel in Southeast Asia: Essential Safety Tips & Empowering Itineraries for First-Timers
+2026-04-03 15:57:11,380 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:57:52,814 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:57:52,814 | INFO | Writer generating blog
+2026-04-03 15:57:52,814 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:58:25,447 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:58:25,465 | INFO | Reviewer evaluating blog
+2026-04-03 15:58:25,466 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:58:42,485 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:58:42,491 | INFO | Reviewer scores: {'content_score': 9.5, 'seo_score': 9, 'readability_score': 9, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ["The 'Total 10-Day Trip Estimate' could offer a consolidated 'grand total' estimate that includes the international flight cost range for a complete, at-a-glance budget picture from India.", "While the itineraries are very practical, integrating even more specific personal anecdotes or 'hidden gem' discoveries within each day's description could deepen the unique, first-person experience further.", 'Consider briefly mentioning a specific local SIM card provider recommendation within each itinerary section, beyond just the general cost, for ultimate practical convenience upon arrival.']}
+2026-04-03 15:58:42,492 | INFO | Avg Score: 9.25 | Iterations: 0
+2026-04-03 15:58:42,492 | INFO | Improver refining blog
+2026-04-03 15:58:42,492 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:59:11,538 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:59:11,545 | WARNING | improver failed (attempt 1/3) | Error: Missing 'Insider Tips' section | Missing 'Mistakes to Avoid' section
+2026-04-03 15:59:13,546 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 15:59:50,428 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 15:59:50,435 | WARNING | improver failed (attempt 2/3) | Error: Missing 'Insider Tips' section | Missing 'Mistakes to Avoid' section
+2026-04-03 15:59:52,436 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:00:13,616 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:00:51,625 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:00:51,628 | WARNING | improver failed (attempt 3/3) | Error: Missing 'Insider Tips' section | Missing 'Mistakes to Avoid' section
+2026-04-03 16:00:51,628 | ERROR | improver failed after 3 attempts
+Traceback (most recent call last):
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\retry.py", line 13, in retry
+    validate(result)
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\graph.py", line 162, in <lambda>
+    validate_content_quality(x)
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\content_validator.py", line 25, in validate_content_quality
+    raise ValueError(" | ".join(errors))
+ValueError: Missing 'Insider Tips' section | Missing 'Mistakes to Avoid' section
+2026-04-03 16:00:51,628 | ERROR | Pipeline failed: Missing 'Insider Tips' section | Missing 'Mistakes to Avoid' section
+Traceback (most recent call last):
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\scheduler.py", line 13, in run_job
+    graph.invoke({})
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\main.py", line 3296, in invoke
+    for chunk in self.stream(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\main.py", line 2727, in stream
+    for _ in runner.tick(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\_retry.py", line 96, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\graph.py", line 153, in improver_node
+    improved = retry(
+               ^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\retry.py", line 13, in retry
+    validate(result)
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\graph.py", line 162, in <lambda>
+    validate_content_quality(x)
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\content_validator.py", line 25, in validate_content_quality
+    raise ValueError(" | ".join(errors))
+ValueError: Missing 'Insider Tips' section | Missing 'Mistakes to Avoid' section
+During task with name 'improver' and id 'c27664a9-92a1-9d7d-69d3-56f9ed6b8112'
+2026-04-03 16:00:51,657 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 16:01:07,300 | INFO | Scheduler stopped manually
+2026-04-03 16:12:02,780 | INFO | Scheduler triggered blog generation
+2026-04-03 16:12:02,780 | INFO | Researcher started
+2026-04-03 16:12:02,787 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:12:18,515 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:12:18,522 | INFO | Selected Topic: Navigating Kerala's Backwaters Solo: A Woman's Guide to Safety, Serenity & Solo Houseboat Stays | Score: 9.5
+2026-04-03 16:12:18,529 | INFO | Planner running for topic: Navigating Kerala's Backwaters Solo: A Woman's Guide to Safety, Serenity & Solo Houseboat Stays
+2026-04-03 16:12:18,529 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:12:46,250 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:12:46,257 | INFO | Writer generating blog
+2026-04-03 16:12:46,257 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:13:20,969 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:13:20,989 | INFO | Reviewer evaluating blog
+2026-04-03 16:13:20,989 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:13:23,095 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:13:40,962 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:13:40,962 | INFO | Reviewer scores: {'content_score': 9, 'seo_score': 8.5, 'readability_score': 9, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ["While the individual daily cost breakdown is thorough, a consolidated 'total estimated budget for the 3-day itinerary' would enhance immediate clarity for financial planning.", "Consider incorporating even more hyper-specific, less-known local spots or micro-experiences (e.g., a particular tea stall known for a unique local snack, or a specific artisan's workshop) to push the 'insider' feel beyond the already excellent level.", 'For absolute consistency, ensure all price ranges consistently specify the currency symbol (₹) where it might be less obvious, even if implied for an Indian audience.']}
+2026-04-03 16:13:40,962 | INFO | Avg Score: 9.0 | Iterations: 0
+2026-04-03 16:13:40,962 | INFO | High-quality blog → skipping improver
+2026-04-03 16:13:40,962 | INFO | SEO started
+2026-04-03 16:13:40,962 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:13:54,512 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:13:54,513 | INFO | Rendering HTML
+2026-04-03 16:13:54,632 | INFO | Saving blog to database
+2026-04-03 16:13:54,651 | INFO | Blog saved to DB
+2026-04-03 16:13:54,651 | INFO | Blog saved to DB
+2026-04-03 16:13:54,653 | INFO | Blog generation completed successfully
+2026-04-03 16:13:54,654 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 16:14:38,384 | INFO | Scheduler stopped manually
+2026-04-03 16:39:19,984 | INFO | Scheduler triggered blog generation
+2026-04-03 16:39:19,992 | INFO | Researcher started
+2026-04-03 16:39:19,992 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:39:31,986 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:39:32,003 | INFO | Selected Topic: A Taste of Heritage: A Central Vietnam Culinary Journey from Hue to Hoi An | Score: 9.0
+2026-04-03 16:39:32,005 | INFO | Planner running for topic: A Taste of Heritage: A Central Vietnam Culinary Journey from Hue to Hoi An
+2026-04-03 16:39:32,006 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:39:55,183 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:39:55,190 | INFO | Writer generating blog
+2026-04-03 16:39:55,190 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:40:23,008 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:40:23,035 | INFO | Reviewer evaluating blog
+2026-04-03 16:40:23,036 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:40:41,900 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:40:41,901 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 8.5, 'verdict': 'good', 'feedback': ["While excellent in depth, consider adding a very brief cultural anecdote or historical note for 1-2 key dishes to elevate the 'why' behind their significance, rather than just the 'what' and 'where'.", "To further enhance the 'real' and 'expert' feel, for some of the 'Mistakes' or 'Insider Tips', integrate a concise personal mini-story or a more vivid 'real-world problem/solution' scenario from your own trip.", 'The budget breakdown is clear; a small section on how to further optimize costs for ultra-budget travelers (e.g., specific strategies for food or transport choices) could broaden its appeal slightly.']}
+2026-04-03 16:40:41,902 | INFO | Avg Score: 8.5 | Iterations: 0
+2026-04-03 16:40:41,902 | INFO | Improver refining blog
+2026-04-03 16:40:41,903 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:41:08,295 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:41:08,327 | INFO | Reviewer evaluating blog
+2026-04-03 16:41:08,327 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:41:27,978 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:41:27,984 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 9, 'uniqueness_score': 9, 'verdict': 'good', 'feedback': ['While the budget range is provided upfront and realistic, a concise summary table or infographic at the end breaking down estimated daily expenses for food, accommodation, and transport could further enhance practical value for budget-conscious readers.', 'The blog successfully targets Indian couples; however, subtly integrating more cultural nuances or comparisons specific to Indian travel habits or culinary expectations throughout the day-to-day narrative (beyond just vegetarian options) could deepen relatability even further.']}
+2026-04-03 16:41:27,984 | INFO | Avg Score: 8.75 | Iterations: 1
+2026-04-03 16:41:27,984 | INFO | High-quality blog → skipping improver
+2026-04-03 16:41:27,992 | INFO | SEO started
+2026-04-03 16:41:27,993 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 16:41:45,171 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 16:41:45,175 | INFO | Rendering HTML
+2026-04-03 16:41:45,271 | INFO | Saving blog to database
+2026-04-03 16:41:45,291 | INFO | Blog saved to DB
+2026-04-03 16:41:45,309 | INFO | Blog saved to DB
+2026-04-03 16:41:45,313 | INFO | Blog generation completed successfully
+2026-04-03 16:41:45,315 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 16:49:18,450 | INFO | Scheduler stopped manually
+2026-04-03 17:11:17,908 | INFO | Scheduler triggered blog generation
+2026-04-03 17:11:17,915 | INFO | Researcher started
+2026-04-03 17:11:17,915 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:11:28,293 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:11:28,307 | INFO | Selected Topic: Solo Female Travel in Rajasthan: A Practical Safety & Culture Guide | Score: 8.9
+2026-04-03 17:11:28,314 | INFO | Planner running for topic: Solo Female Travel in Rajasthan: A Practical Safety & Culture Guide
+2026-04-03 17:11:28,314 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:11:55,539 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:11:55,544 | INFO | Writer generating blog
+2026-04-03 17:11:55,545 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:12:26,883 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:12:26,905 | INFO | Reviewer evaluating blog
+2026-04-03 17:12:26,906 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:12:42,537 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:12:42,540 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 9, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ["While the content is excellent, consider converting bolded sub-sections (e.g., 'The Road Less Treacherous') into actual H3/H4 headings for improved semantic SEO and accessibility.", 'For enhanced visual appeal and to break up text, incorporating high-quality, authentic images relevant to each section would significantly improve user engagement, a common feature of top-ranking blogs.', "Ensure consistent placement of the currency symbol (e.g., '₹500' instead of '500₹') for a more polished and professional presentation."]}
+2026-04-03 17:12:42,541 | INFO | Avg Score: 8.875 | Iterations: 0
+2026-04-03 17:12:42,541 | INFO | High-quality blog → skipping improver
+2026-04-03 17:12:42,543 | INFO | SEO started
+2026-04-03 17:12:42,543 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:12:55,210 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:12:55,210 | INFO | Rendering HTML
+2026-04-03 17:12:55,300 | INFO | Saving blog to database
+2026-04-03 17:12:55,314 | INFO | Blog saved to DB
+2026-04-03 17:12:55,336 | INFO | Blog saved to DB
+2026-04-03 17:12:55,336 | INFO | Blog generation completed successfully
+2026-04-03 17:12:55,336 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 17:13:49,550 | INFO | Scheduler stopped manually
+2026-04-03 17:30:21,186 | INFO | Scheduler triggered blog generation
+2026-04-03 17:30:21,193 | INFO | Researcher started
+2026-04-03 17:30:21,193 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:30:33,131 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:30:33,144 | INFO | Selected Topic: Digital Nomad's Guide to Living and Working in Goa: Beyond the Beaches & Parties | Score: 8.9
+2026-04-03 17:30:33,150 | INFO | Planner running for topic: Digital Nomad's Guide to Living and Working in Goa: Beyond the Beaches & Parties
+2026-04-03 17:30:33,151 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:31:03,273 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:31:03,280 | INFO | Writer generating blog
+2026-04-03 17:31:03,280 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:31:34,782 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:31:34,812 | INFO | Reviewer evaluating blog
+2026-04-03 17:31:34,820 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:31:49,293 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:31:49,295 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 9, 'verdict': 'good', 'feedback': ["While excellent advice is given on finding local accommodation deals by 'walking around and asking locals,' a brief mention of specific local online groups (e.g., Facebook, WhatsApp communities for long-term rentals) could offer additional practical avenues for new nomads.", "The blog effectively encourages learning basic Konkani phrases. A small, dedicated section or a bulleted list of 3-5 'Essential Konkani Phrases for Daily Nomad Life' could be a charming and highly useful addition for deeper cultural integration.", 'For true expert-level depth, a very brief acknowledgement or comparison with other emerging Indian digital nomad hubs (e.g., Dharamshala, Rishikesh, Hampi) and a concise argument for why Goa uniquely offers what it does could further solidify its competitive edge.']}
+2026-04-03 17:31:49,295 | INFO | Avg Score: 8.625 | Iterations: 0
+2026-04-03 17:31:49,297 | INFO | Improver refining blog
+2026-04-03 17:31:49,297 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:32:17,362 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:32:17,387 | INFO | Reviewer evaluating blog
+2026-04-03 17:32:17,387 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:32:35,830 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:32:35,830 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 8.5, 'verdict': 'good', 'feedback': ["The blog's strong personal voice, 'bold opinions,' and integration of 'contrarian truths' and 'insider tips' make it highly engaging and unique, effectively differentiating it from generic travel guides.", 'The depth of practical information is exceptional, particularly the detailed INR cost breakdown, specific recommendations for long-term bases (Assagao, Siolim), co-working spaces, and local markets, which offers immense value to Indian digital nomads.', 'The clear structure, use of strong headings, a comprehensive checklist, and a well-developed FAQ section significantly enhance both SEO and user experience, making the content easy to navigate and digest.', "To potentially push towards a rare 9+ score, consider weaving in even more vivid, specific personal anecdotes that illustrate a 'day in the life' or a particularly challenging/rewarding experience, further deepening the reader's immersive connection.", "While 'Common Mistakes' are well-covered, exploring slightly more nuanced cultural or bureaucratic hurdles (beyond just power cuts) that might arise when establishing a long-term base in Goa could add another layer of 'non-obvious' insight."]}
+2026-04-03 17:32:35,836 | INFO | Avg Score: 8.5 | Iterations: 1
+2026-04-03 17:32:35,836 | INFO | Improver refining blog
+2026-04-03 17:32:35,836 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:33:06,645 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:33:06,681 | INFO | Reviewer evaluating blog
+2026-04-03 17:33:06,681 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:33:29,374 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:33:29,374 | INFO | Reviewer scores: {'content_score': 9, 'seo_score': 9, 'readability_score': 9, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ["While the 'Beyond the Screen' section provides excellent immersive ideas, adding specific actionable advice on 'how' to find or book these unique local experiences (e.g., best contacts for local cooking classes, specific tour operators for less-known trails) would enhance practical value.", "The guide expertly covers 'foreigner pricing'; however, a very brief mention of how local waste management or sustainability efforts might impact a nomad's daily life, and how to engage responsibly, could add another layer of 'unvarnished truth' for long-term stays."]}
+2026-04-03 17:33:29,376 | INFO | Avg Score: 9.125 | Iterations: 2
+2026-04-03 17:33:29,376 | INFO | High-quality blog → skipping improver
+2026-04-03 17:33:29,377 | INFO | SEO started
+2026-04-03 17:33:29,377 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:33:42,274 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:33:42,274 | INFO | Rendering HTML
+2026-04-03 17:33:42,340 | INFO | Saving blog to database
+2026-04-03 17:33:42,353 | INFO | Blog saved to DB
+2026-04-03 17:33:42,366 | INFO | Blog saved to DB
+2026-04-03 17:33:42,366 | INFO | Generated Topic: Digital Nomad's Guide to Living and Working in Goa: Beyond the Beaches & Parties
+2026-04-03 17:33:42,366 | INFO | HTML length: 25084
+2026-04-03 17:33:42,366 | INFO | Blog generation completed successfully
+2026-04-03 17:33:42,366 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 17:48:18,089 | INFO | Scheduler stopped manually
+2026-04-03 17:49:10,494 | INFO | Scheduler triggered blog generation
+2026-04-03 17:49:10,501 | INFO | Researcher started
+2026-04-03 17:49:10,501 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:49:23,350 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:49:23,357 | INFO | Selected Topic: Navigating India's Local Trains: A First-Timer's Guide to Sleeper Class Adventures | Score: 9.1
+2026-04-03 17:49:23,363 | INFO | Planner running for topic: Navigating India's Local Trains: A First-Timer's Guide to Sleeper Class Adventures
+2026-04-03 17:49:23,363 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:49:43,984 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:49:43,988 | INFO | Writer generating blog
+2026-04-03 17:49:43,988 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:50:12,632 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:50:12,661 | INFO | Reviewer evaluating blog
+2026-04-03 17:50:12,661 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:50:30,961 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:50:30,977 | INFO | Reviewer scores: {'content_score': 8.8, 'seo_score': 8.5, 'readability_score': 8.7, 'uniqueness_score': 9.0, 'verdict': 'good', 'feedback': ['Consider adding a more impactful concluding section to powerfully summarize the unique cultural immersion aspect of Sleeper Class, leaving an even stronger emotional takeaway.', 'While engaging, integrating slightly more vivid and specific sensory details throughout the journey (e.g., unique sounds, specific sights from the window, distinct smells at stations) could further enhance reader immersion and connection.']}
+2026-04-03 17:50:30,977 | INFO | Avg Score: 8.75 | Iterations: 0
+2026-04-03 17:50:30,977 | INFO | High-quality blog → skipping improver
+2026-04-03 17:50:30,977 | INFO | SEO started
+2026-04-03 17:50:30,977 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 17:50:43,986 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 17:50:44,001 | INFO | Rendering HTML
+2026-04-03 17:50:44,068 | INFO | Saving blog to database
+2026-04-03 17:50:44,084 | INFO | Blog saved to DB
+2026-04-03 17:50:44,099 | INFO | Blog saved to DB
+2026-04-03 17:50:44,101 | INFO | Generated Topic: Navigating India's Local Trains: A First-Timer's Guide to Sleeper Class Adventures
+2026-04-03 17:50:44,101 | INFO | HTML length: 16499
+2026-04-03 17:50:44,101 | INFO | Blog generation completed successfully
+2026-04-03 17:50:44,101 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 17:54:49,824 | INFO | Scheduler stopped manually
+2026-04-03 18:15:42,133 | INFO | Scheduler triggered blog generation
+2026-04-03 18:15:42,133 | INFO | Researcher started
+2026-04-03 18:15:42,133 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:15:53,399 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:15:53,417 | INFO | Selected Topic: Da Nang Digital Nomad Blueprint: Coworking, Cost of Living, and Community Guide | Score: 8.8
+2026-04-03 18:15:53,421 | INFO | Planner running for topic: Da Nang Digital Nomad Blueprint: Coworking, Cost of Living, and Community Guide
+2026-04-03 18:15:53,421 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:16:14,741 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:16:14,755 | INFO | JSON PARSE FAILED
+2026-04-03 18:16:14,755 | WARNING | planner failed (attempt 1/3) | Error: Unable to parse JSON
+2026-04-03 18:16:16,756 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:16:42,633 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:16:42,639 | INFO | Writer generating blog
+2026-04-03 18:16:42,640 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:17:19,553 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:17:19,588 | INFO | Reviewer evaluating blog
+2026-04-03 18:17:19,588 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:17:37,611 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:17:37,622 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 9.0, 'verdict': 'good', 'feedback': ["The initial stated budget range (₹30,000 - ₹55,000) for a comfortable lifestyle is contradicted by the calculated total monthly budget at the end of the 'Cost of Living' section (₹36,500 - ₹77,700), which can confuse the reader regarding realistic expectations.", "While excellent, the 'Cultural Nuances' section could be further enhanced with more specific anecdotes or examples of common misunderstandings to deepen the realness and practical advice for Indian travelers."]}
+2026-04-03 18:17:37,624 | INFO | Avg Score: 8.625 | Iterations: 0
+2026-04-03 18:17:37,625 | INFO | Improver refining blog
+2026-04-03 18:17:37,625 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:18:12,567 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:18:12,595 | INFO | Reviewer evaluating blog
+2026-04-03 18:18:12,595 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:18:28,954 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:18:28,954 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 9, 'verdict': 'good', 'feedback': ['Exceptional niche targeting for Indian digital nomads, consistently providing specific INR cost breakdowns and highly relevant advice.', "The blog demonstrates a strong, opinionated voice, particularly in the 'Da Nang Digital Nomad Traps' section, which includes valuable 'Strong Opinions' and addresses common pitfalls for the target audience.", "Excellent inclusion of practical 'Mistakes to Avoid' and 'Insider Tips' sections, offering non-obvious and genuinely useful insights that stem from real experience.", 'The content is well-structured, easy to read, and highly engaging due to its personal tone and clear presentation of information.', 'The detailed cultural nuances and visa vigilance specific to Indian passport holders significantly enhance the uniqueness and practical value of the guide.']}
+2026-04-03 18:18:28,954 | INFO | Avg Score: 8.625 | Iterations: 1
+2026-04-03 18:18:28,954 | INFO | Improver refining blog
+2026-04-03 18:18:28,954 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:19:10,542 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:19:10,571 | INFO | Reviewer evaluating blog
+2026-04-03 18:19:10,571 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:19:29,936 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:19:29,940 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 9.0, 'verdict': 'good', 'feedback': ['Consider adding a brief section on healthcare access, local medical facilities, and recommended travel insurance options relevant for Indian nomads for extended stays.', 'While the visa warning is strong, a more detailed breakdown of potential long-term visa strategies (e.g., business visas, temporary residence cards if applicable) or trusted local consultants for Indian citizens could enhance depth for those planning truly long-term stays.', 'Expand on financial practicalities beyond cash/ATMs, such as recommended international money transfer services or options for setting up a local bank account (if feasible for non-residents).']}
+2026-04-03 18:19:29,940 | INFO | Avg Score: 8.625 | Iterations: 2
+2026-04-03 18:19:29,940 | INFO | FINAL RESULT | Score: 8.625 | Iterations: 2
+2026-04-03 18:19:29,942 | INFO | SEO started
+2026-04-03 18:19:29,942 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:19:42,990 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:19:42,992 | INFO | Rendering HTML
+2026-04-03 18:19:43,030 | INFO | Saving blog to database
+2026-04-03 18:19:43,057 | INFO | Blog saved to DB
+2026-04-03 18:19:43,070 | INFO | Metrics | Score: 8.625 | Iter: 2 | Len: 4005 | Errors: 0
+2026-04-03 18:19:43,071 | INFO | Blog saved to DB
+2026-04-03 18:19:43,072 | INFO | Generated Topic: Da Nang Digital Nomad Blueprint: Coworking, Cost of Living, and Community Guide
+2026-04-03 18:19:43,073 | INFO | HTML length: 26867
+2026-04-03 18:19:43,073 | INFO | Blog generation completed successfully
+2026-04-03 18:19:43,074 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 18:20:24,681 | INFO | Scheduler stopped manually
+2026-04-03 18:33:06,309 | INFO | Scheduler triggered blog generation
+2026-04-03 18:33:06,309 | INFO | Researcher started
+2026-04-03 18:33:06,309 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:33:20,988 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:33:20,988 | INFO | Selected Topic: Mastering the Art of Train Travel in India & Southeast Asia: Booking Hacks, Routes & Sleeper Class Survival Guide | Score: 8.8
+2026-04-03 18:33:20,988 | INFO | Planner running for topic: Mastering the Art of Train Travel in India & Southeast Asia: Booking Hacks, Routes & Sleeper Class Survival Guide
+2026-04-03 18:33:20,988 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:33:43,896 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:33:43,904 | INFO | Writer generating blog
+2026-04-03 18:33:43,904 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:34:13,441 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:34:13,462 | INFO | Reviewer evaluating blog
+2026-04-03 18:34:13,462 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:34:33,512 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:34:33,512 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 8.5, 'readability_score': 8.5, 'uniqueness_score': 8.5, 'verdict': 'good', 'feedback': ["While content depth is excellent, integrating more personal 'mistake' anecdotes (e.g., a specific instance where a delay ruined a connection, or a booking error experience) could elevate the practical value further.", "For top-tier SEO, strategically embed internal links to other relevant posts on your blog and external links to official railway websites or booking platforms (like 12Go.Asia) within the body text, rather than just mentioning them. Consider adding a short summary/meta description at the start (though not strictly part of the blog content provided, it's crucial for SEO).", "Readability is strong, but for ultimate scannability, consider breaking down longer bulleted lists (e.g., in 'Sleeper Class Survival Guide') with mini-headings for each point. This helps readers quickly grasp specific tips.", "The uniqueness is a major strength. To push it even further, elaborate on the 'Master the Art of Observation' advice with more specific examples of memorable interactions or cultural insights gained from fellow passengers or local life observed, making the journey even more vividly 'live documentary'."]}
+2026-04-03 18:34:33,512 | INFO | Avg Score: 8.5 | Iterations: 0
+2026-04-03 18:34:33,518 | INFO | Improver refining blog
+2026-04-03 18:34:33,518 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:35:09,970 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:35:10,014 | INFO | Reviewer evaluating blog
+2026-04-03 18:35:10,014 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:35:31,506 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:35:31,506 | INFO | Reviewer scores: {'content_score': 8.5, 'seo_score': 9, 'readability_score': 9, 'uniqueness_score': 9, 'verdict': 'good', 'feedback': ['The blog stands out with its exceptionally strong, opinionated voice and frequent integration of personal anecdotes, providing a genuine and highly engaging reader experience.', 'Offers a comprehensive and practical guide for Indian budget backpackers, covering nuanced booking strategies, essential routes with cost breakdowns, and crucial survival tips for both India and Southeast Asia.', 'Exemplary SEO quality, demonstrated by a clear intent, effective keyword usage, well-structured headings, strong internal/external linking, and a well-executed FAQ section.', "The 'Insider Hacks, Mistakes to Avoid & Non-Obvious Advice' section significantly enhances uniqueness, offering valuable insights not commonly found in generic travel blogs.", 'To achieve an even higher content tier, consider delving into even more granular, niche-specific cultural observations or micro-level details for certain routes or passenger interactions.']}
+2026-04-03 18:35:31,506 | INFO | Avg Score: 8.875 | Iterations: 1
+2026-04-03 18:35:31,506 | INFO | High-quality blog → skipping improver
+2026-04-03 18:35:31,506 | INFO | SEO started
+2026-04-03 18:35:31,506 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:35:44,081 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:35:44,081 | INFO | Rendering HTML
+2026-04-03 18:35:44,133 | INFO | Saving blog to database
+2026-04-03 18:35:44,154 | INFO | Blog saved to DB
+2026-04-03 18:35:44,168 | INFO | Metrics | Score: 8.875 | Iter: 1 | Len: 2716 | Errors: 1
+2026-04-03 18:35:44,168 | INFO | Blog saved to DB
+2026-04-03 18:35:44,176 | INFO | Generated Topic: Mastering the Art of Train Travel in India & Southeast Asia: Booking Hacks, Routes & Sleeper Class Survival Guide
+2026-04-03 18:35:44,176 | INFO | HTML length: 18361
+2026-04-03 18:35:44,176 | INFO | Execution Time: 157.87s
+2026-04-03 18:35:44,176 | INFO | Blog generation completed successfully
+2026-04-03 18:35:44,176 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 18:36:32,527 | INFO | Scheduler stopped manually
+2026-04-03 18:44:06,906 | INFO | Scheduler triggered blog generation
+2026-04-03 18:44:06,910 | INFO | Researcher started
+2026-04-03 18:44:06,910 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:44:21,055 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:44:21,055 | INFO | Selected Topic: The Ultimate 3-Week Backpacking Route: Climbing Volcanoes & Chasing Waterfalls Across Java & Bali | Score: 8.3
+2026-04-03 18:44:21,055 | INFO | Planner running for topic: The Ultimate 3-Week Backpacking Route: Climbing Volcanoes & Chasing Waterfalls Across Java & Bali
+2026-04-03 18:44:21,064 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:44:47,465 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:44:47,466 | INFO | Writer generating blog
+2026-04-03 18:44:47,466 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:45:17,810 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:45:17,836 | INFO | Reviewer evaluating blog
+2026-04-03 18:45:17,838 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:45:39,877 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:45:39,884 | INFO | Reviewer scores: {'content_score': 9.5, 'seo_score': 8.5, 'readability_score': 9.0, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ['The content is exceptionally detailed and tailored, but could benefit from a brief section on essential Indonesian phrases for practical immersion.', "While excellent, adding a concise 'Key Takeaways' section at the end could further improve scannability for readers seeking quick information and reiterate crucial points.", 'The blog is highly engaging, but some paragraphs are quite dense; incorporating slightly more white space or breaking longer paragraphs into shorter ones could enhance visual readability, especially on mobile devices.', "The uniqueness is outstanding, yet a specific, brief personal anecdote or a particularly vivid local interaction could elevate the 'real' feeling even further beyond the already strong opinions."]}
+2026-04-03 18:45:39,884 | INFO | Avg Score: 9.125 | Iterations: 0
+2026-04-03 18:45:39,884 | INFO | High-quality blog → skipping improver
+2026-04-03 18:45:39,887 | INFO | SEO started
+2026-04-03 18:45:39,887 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-03 18:45:49,940 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-03 18:45:49,940 | INFO | Rendering HTML
+2026-04-03 18:45:49,984 | INFO | Saving blog to database
+2026-04-03 18:45:50,010 | INFO | Blog saved to DB
+2026-04-03 18:45:50,027 | INFO | Metrics | Score: 9.125 | Iter: 0 | Len: 2955 | Errors: 1 | Time: Nones
+2026-04-03 18:45:50,027 | INFO | Blog saved to DB
+2026-04-03 18:45:50,029 | INFO | Generated Topic: The Ultimate 3-Week Backpacking Route: Climbing Volcanoes & Chasing Waterfalls Across Java & Bali
+2026-04-03 18:45:50,029 | INFO | HTML length: 20428
+2026-04-03 18:45:50,029 | INFO | Blog generation completed successfully
+2026-04-03 18:45:50,029 | INFO | Scheduler started (runs every 6 hours)
+2026-04-03 18:49:02,877 | INFO | Scheduler stopped manually
