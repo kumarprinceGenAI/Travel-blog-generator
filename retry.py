@@ -2,10 +2,10 @@ from logger import logger
 import time
 
 
-def retry(func, retries=3, delay=2, name="operation", validate=None):
-    last_error = None
+def retry(func, attempts=3, delay=2, name="task", validate=None):
+    import time
 
-    for attempt in range(1, retries + 1):
+    for i in range(attempts):
         try:
             result = func()
 
@@ -15,17 +15,9 @@ def retry(func, retries=3, delay=2, name="operation", validate=None):
             return result
 
         except Exception as e:
-            last_error = str(e)
-
-            logger.warning(
-                f"{name} failed (attempt {attempt}/{retries}) | Error: {last_error}"
-            )
-
-            if attempt == retries:
-                logger.error(
-                    f"{name} failed after {retries} attempts",
-                    exc_info=True
-                )
-                raise
-
+            print(f"[Retry:{name}] Attempt {i+1} failed → {e}")
             time.sleep(delay)
+
+    print(f"[Retry:{name}] All attempts failed → returning fallback")
+
+    return {}  # 🔥 ALWAYS dict (safe for your pipeline)

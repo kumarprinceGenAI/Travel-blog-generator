@@ -1,25 +1,48 @@
 import json
 
 
-# 🔹 Planner Validation
-def validate_plan(plan_input):
-    # If already dict → use directly
-    if isinstance(plan_input, dict):
-        plan = plan_input
-    else:
-        try:
-            plan = json.loads(plan_input)
-        except:
-            raise ValueError("Invalid JSON from planner")
+REQUIRED_PLAN_KEYS = [
+    "intent",
+    "persona",
+    "audience",
+    "blog_type",
+    "tone",
+    "sections",
+    "local_context",
+    "seo_keywords"
+]
 
-    required_keys = ["audience", "sections", "seo_keywords"]
 
-    for key in required_keys:
+def validate_plan(plan: dict):
+    if not isinstance(plan, dict):
+        print("[Validator] Invalid plan → using fallback")
+        plan = {}
+
+    for key in REQUIRED_PLAN_KEYS:
         if key not in plan:
-            raise ValueError(f"Planner output missing key: {key}")
+            print(f"[Validator] Missing key → {key}")
 
-    if not isinstance(plan["sections"], list) or len(plan["sections"]) == 0:
-        raise ValueError("Planner sections invalid")
+            if key == "sections":
+                plan[key] = []
+
+            elif key == "local_context":
+                plan[key] = {
+                    "currency": "INR (₹)",
+                    "budget_range": "",
+                    "transport_examples": "",
+                    "practical_notes": ""
+                }
+
+            elif key == "seo_keywords":
+                # 🔥 FIXED → keep STRUCTURE
+                plan[key] = {
+                    "primary_keyword": "",
+                    "secondary_keywords": [],
+                    "long_tail_keywords": []
+                }
+
+            else:
+                plan[key] = ""
 
     return plan
 

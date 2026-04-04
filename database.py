@@ -31,6 +31,15 @@ def init_db():
     )
     """)
 
+    # ✅ Topic Embeddings table (NEW)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS topic_embeddings (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        topic TEXT,
+        embedding BLOB
+    )
+    """)
+
     # 🔥 SAFE COLUMN ADDITIONS (NO BREAKAGE)
     try:
         cursor.execute("ALTER TABLE metrics ADD COLUMN content_length INTEGER")
@@ -49,6 +58,10 @@ def init_db():
 
     try:
         cursor.execute("ALTER TABLE metrics ADD COLUMN time_taken REAL")
+    except:
+        pass
+    try:
+        cursor.execute("ALTER TABLE metrics ADD COLUMN improvement_delta REAL")
     except:
         pass
 

@@ -13,110 +13,88 @@ def reviewer_agent(blog: str):
     prompt = f"""
 You are a VERY STRICT travel blog reviewer.
 
-Your job is to evaluate if this blog can COMPETE with top Google results.
-
 ---
 
- EVALUATION CRITERIA
+EVALUATION CRITERIA
 
 1. CONTENT QUALITY
-- Depth, usefulness, practical value
-
 2. SEO QUALITY
-- Clear intent, keyword usage, structure
-
 3. READABILITY
-- Flow, clarity, engagement
-
 4. UNIQUENESS (MOST IMPORTANT)
-- Does it feel real or generic?
-- Does it include experience, opinions, insights?
 
 ---
 
- STRICT SCORING RULE (VERY IMPORTANT)
+SEO STRICT CHECKS
 
-You MUST follow this distribution:
+- Keyword in H1
+- Keyword in intro
+- 2+ keyword H2s
+- FAQ section
+- snippet-friendly section
 
-- 9–10 → ONLY if exceptional, unique, expert-level (rare)
-- 8–8.5 → good but still somewhat safe/generic
-- 7–7.5 → average content
-- <7 → poor or generic
-
- Most blogs should be between 7–8.5  
- Do NOT give 9+ easily  
+If missing → seo_score ≤ 7
 
 ---
 
- EXAMPLES OF SCORING (VERY IMPORTANT)
+PENALTIES
 
-Example 1:
-- Blog is detailed but slightly generic and safe
-→ content_score: 7.5
-→ uniqueness_score: 7
-→ verdict: needs_improvement
-
-Example 2:
-- Blog has good tips but lacks strong opinions and edge
-→ content_score: 8
-→ uniqueness_score: 7.5
-→ verdict: needs_improvement
-
-Example 3:
-- Blog is highly original, opinionated, and better than competitors
-→ content_score: 9
-→ uniqueness_score: 9
-→ verdict: good
-
- IMPORTANT:
-Most blogs should match Example 1 or 2, NOT Example 3.
-
----
-
- PENALTIES (APPLY STRICTLY)
-
-If ANY of these exist:
-
-- generic tone → uniqueness_score ≤ 7
-- no strong opinions → reduce content_score by 1–2
-- no controversial/non-obvious insights → uniqueness_score ≤ 7
-- lacks mistakes/tips → content_score ≤ 7
-- intro weak → reduce content_score by 1
-- feels AI-generated → uniqueness_score ≤ 6
+- generic tone → uniqueness ≤ 7
+- no opinions → reduce content_score
+- no insights → uniqueness ≤ 7
 - no FAQ → seo_score ≤ 7
-- No ₹ → seo_score max 6
-- No tips → content_score max 7
-- No mistakes → uniqueness_score max 7
+- no ₹ → seo_score ≤ 6
 
 ---
 
- AVERAGE SCORE CALCULATION (MANDATORY)
+SCORING RULE
 
-Average = (content_score + seo_score + readability_score + uniqueness_score) / 4
-
-You MUST calculate this before giving verdict.
-
----
-
- VERDICT RULE (ONLY RULE)
-
-- If average < 8.5 → "needs_improvement"
-- If average ≥ 8.5 → "good"
+- 9–10 → rare
+- 8–8.5 → good
+- 7–7.5 → average
 
 ---
 
- OUTPUT FORMAT (STRICT JSON)
+VERDICT RULE
+
+- avg < 8.5 → needs_improvement
+- avg ≥ 8.5 → good
+
+---
+STRICT ENFORCEMENT:
+
+If the blog feels even slightly generic:
+→ uniqueness_score MUST be ≤ 7
+
+If content lacks strong opinions or edge:
+→ content_score MUST be ≤ 8
+
+If you give score ≥ 9:
+→ you MUST justify with a VERY RARE reason
+
+If unsure:
+→ default to 7–8 range
+---
+If you give:
+- uniqueness_score ≥ 9
+- content_score ≥ 9
+
+You MUST ensure:
+- strong opinions present
+- non-obvious insights present
+- personal tone present
+
+Else → reduce score
+---
+
+OUTPUT
 
 {{
-  "content_score": number between 0 and 10,
-  "seo_score": number between 0 and 10,
-  "readability_score": number between 0 and 10,
-  "uniqueness_score": number between 0 and 10,
-  "verdict": "good" or "needs_improvement",
-  "feedback": [
-    "specific issue",
-    "specific issue"
-  ]
+  "content_score": number,
+  "seo_score": number,
+  "readability_score": number,
+  "uniqueness_score": number,
+  "verdict": "...",
+  "feedback": ["...", "..."]
 }}
 
 ---
@@ -124,9 +102,7 @@ You MUST calculate this before giving verdict.
 Blog:
 {blog}
 
-Return ONLY valid JSON.
-No markdown.
-No explanation.
+Return ONLY JSON.
 """
 
     response = safe_generate(lambda: client.models.generate_content(

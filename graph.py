@@ -8,7 +8,7 @@ from improver import improver_agent
 from seo import seo_agent
 from researcher import researcher_agent, calculate_score
 
-from memory import is_duplicate, save_topic
+from memory import is_duplicate, save_topic, is_semantic_duplicate
 from storage import save_blog
 
 from logger import logger
@@ -18,6 +18,10 @@ from metrics import save_metrics
 from versioning import save_version
 from content_validator import validate_content_quality
 import time
+from embedding import get_embedding
+import pickle
+import sqlite3
+from linking_engine import get_related_topics, inject_internal_links
 
 
 # =========================
@@ -33,11 +37,21 @@ class BlogState(TypedDict, total=False):
     iterations: int
     validation_errors: list
     start_time: float
+    initial_score: float
+    final_score: float
 
 
 # =========================
 # NODES
 # =========================
+
+def is_overused_theme(title: str):
+    title_lower = title.lower()
+
+    keywords = ["visa", "budget", "digital nomad"]
+
+    return any(k in title_lower for k in keywords)
+
 
 def researcher_node(state):
     logger.info("Researcher started")
@@ -49,19 +63,57 @@ def researcher_node(state):
         logger.error("No topics returned by researcher")
         return state
 
-    unique_topics = [
-        t for t in topics if not is_duplicate(t.get("title"))
-    ]
+    # 🔥 UPDATED: Hybrid duplicate filtering (exact + semantic)
+    unique_topics = []
+
+    for t in topics:
+        title = t.get("title")
+
+        if is_duplicate(title):
+            logger.info(f"[Dedup] Exact duplicate skipped: {title}")
+            continue
+
+        if is_semantic_duplicate(title):
+            logger.info(f"[Semantic Dedup] Skipping similar topic: {title}")
+            continue
+
+        unique_topics.append(t)
 
     if not unique_topics:
         logger.warning("No unique topics found, skipping run")
         return state
 
-    # 🔥 Score topics
+    # ✅ Score topics
     for t in unique_topics:
         t["final_score"] = calculate_score(t)
 
-    best_topic = max(unique_topics, key=lambda x: x["final_score"])
+    # 🔥 split topics into balanced groups
+    diverse_topics = [t for t in unique_topics if not is_overused_theme(t["title"])]
+    trend_topics = [t for t in unique_topics if is_overused_theme(t["title"])]
+
+    # 🔥 LOG for visibility
+    logger.info(f"[Researcher] Diverse Topics: {[t['title'] for t in diverse_topics]}")
+    logger.info(f"[Researcher] Trend Topics: {[t['title'] for t in trend_topics]}")
+
+    # 🔥 allow strong trend topics if much better
+    best_diverse = max(diverse_topics, key=lambda x: x["final_score"]) if diverse_topics else None
+    best_trend = max(trend_topics, key=lambda x: x["final_score"]) if trend_topics else None
+
+    if best_diverse and best_trend:
+        if best_trend["final_score"] - best_diverse["final_score"] > 0.7:
+            logger.info("[Researcher] Selecting HIGH-SCORE TREND topic")
+            best_topic = best_trend
+        else:
+            logger.info("[Researcher] Selecting BALANCED DIVERSE topic")
+            best_topic = best_diverse
+
+    elif best_diverse:
+        logger.info("[Researcher] Selecting DIVERSE topic")
+        best_topic = best_diverse
+
+    else:
+        logger.info("[Researcher] Fallback to TREND topic")
+        best_topic = best_trend
 
     logger.info(
         f"Selected Topic: {best_topic['title']} | Score: {best_topic['final_score']}"
@@ -73,7 +125,6 @@ def researcher_node(state):
 
     return state
 
-
 def planner_node(state):
     logger.info(f"Planner running for topic: {state['topic']}")
 
@@ -82,6 +133,21 @@ def planner_node(state):
         name="planner"
     )
 
+    if not raw_plan:
+        logger.warning("[Planner] Empty output → using fallback")
+        raw_plan = {}
+
+    # 🔥 BACKWARD COMPAT FIX (STRUCTURE SAFE)
+    if "seo_keywords" not in raw_plan:
+        kw = raw_plan.get("keywords", {})
+
+        raw_plan["seo_keywords"] = {
+            "primary_keyword": kw.get("primary_keyword", ""),
+            "secondary_keywords": kw.get("secondary_keywords", []),
+            "long_tail_keywords": kw.get("long_tail_keywords", [])
+        }
+
+    # 🔥 FINAL SAFE VALIDATION
     state["plan"] = validate_plan(raw_plan)
 
     return state
@@ -127,7 +193,22 @@ def reviewer_node(state):
         validate=validate_review
     )
 
-    logger.info(f"Reviewer scores: {state['review']}")
+    r = state["review"]
+
+    score = (
+        r["content_score"] +
+        r["seo_score"] +
+        r["readability_score"] +
+        r["uniqueness_score"]
+    ) / 4
+
+    if "initial_score" not in state:
+        state["initial_score"] = score
+
+    # 🔥 ALWAYS UPDATE FINAL SCORE
+    state["final_score"] = score
+
+    logger.info(f"Reviewer scores: {state['review']} | Avg: {score}")
 
     return state
 
@@ -207,22 +288,50 @@ def save_node(state):
 
     logger.info("Saving blog to database")
 
+    
+
+    # 🔥 INTERNAL LINKING (NEW)
+
+    print(f"[Linking] 🚀 Starting internal linking for topic: {state.get('topic')}")
+    related = get_related_topics(state["topic"])
+
+    if related:
+        state["blog"] = inject_internal_links(state["blog"], related)
+    print(f"[Linking] ✅ Internal linking completed")
+
+    
+
     data = {
         "topic": state.get("topic"),
         "blog": state.get("blog"),
         "html": state.get("html"),
         "seo": state.get("seo"),
     }
-
     save_blog(data)
 
-    # 🔥 SAVE METRICS (UPGRADED)
+    embedding = get_embedding(state["topic"])
+
+    if embedding is not None:
+        conn = sqlite3.connect("blogs.db")
+        cursor = conn.cursor()
+
+        cursor.execute(
+            "INSERT INTO topic_embeddings (topic, embedding) VALUES (?, ?)",
+            (state["topic"], pickle.dumps(embedding))
+        )
+
+        conn.commit()
+        conn.close()
+
+    # 🔥 SAVE METRICS (FINAL VERSION)
     if state.get("review"):
+        r = state["review"]
+
         score = (
-            state["review"]["content_score"] +
-            state["review"]["seo_score"] +
-            state["review"]["readability_score"] +
-            state["review"]["uniqueness_score"]
+            r["content_score"] +
+            r["seo_score"] +
+            r["readability_score"] +
+            r["uniqueness_score"]
         ) / 4
 
         blog_text = state.get("blog", "")
@@ -231,8 +340,21 @@ def save_node(state):
         content_length = len(blog_text.split())
         error_count = len(validation_errors)
         improved = state.get("iterations", 0) > 0
+
+        # 🔥 TIME
         start_time = state.get("start_time")
         time_taken = round(time.time() - start_time, 2) if start_time else None
+
+        # 🔥 IMPROVEMENT TRACKING
+        initial_score = state.get("initial_score")
+        final_score = state.get("final_score")
+
+        improvement_delta = (
+            round(final_score - initial_score, 3)
+            if initial_score is not None and final_score is not None
+            else None
+        )
+
         save_metrics(
             topic=state["topic"],
             score=score,
@@ -241,12 +363,14 @@ def save_node(state):
             content_length=content_length,
             error_count=error_count,
             improved=improved,
-            time_taken=time_taken
+            time_taken=time_taken,
+            improvement_delta=improvement_delta
         )
 
         logger.info(
             f"Metrics | Score: {score} | Iter: {state.get('iterations')} | "
-            f"Len: {content_length} | Errors: {error_count} | Time: {time_taken}s"
+            f"Len: {content_length} | Errors: {error_count} | "
+            f"Delta: {improvement_delta} | Time: {time_taken}s"
         )
 
     logger.info("Blog saved to DB")
@@ -270,15 +394,15 @@ def decision_node(state):
 
     logger.info(f"Avg Score: {score} | Iterations: {iterations}")
 
-    if iterations == 0:
-        return "improver"
     
-    if score >= 9.2:
+    if score >= 9.0:
         logger.info("High-quality blog → skipping improver")
         return "seo"
-
-    if score < 9.2 and iterations < 2:
+    
+    if iterations < 2:
+        logger.info("Sending to improver")
         return "improver"
+    
 
     logger.info(f"FINAL RESULT | Score: {score} | Iterations: {iterations}")
     return "seo"

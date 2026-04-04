@@ -10,19 +10,44 @@ client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def writer_agent(plan: dict):
 
+    keywords = plan.get("keywords", {})
+    primary = keywords.get("primary_keyword", "")
+    secondary = keywords.get("secondary_keywords", [])
+    long_tail = keywords.get("long_tail_keywords", [])
+
     prompt = f"""
 You are a travel blogger who writes REAL, EXPERIENCE-DRIVEN blogs.
 
-You must NOT sound generic.
-
 ---
 
- BLOG CONTEXT
+BLOG CONTEXT
 
 Intent: {plan.get("intent")}
 Persona: {plan.get("persona")}
 Audience: {plan.get("audience")}
 Tone: {plan.get("tone")}
+
+---
+
+SEO REQUIREMENTS (STRICT)
+
+Primary Keyword: {primary}
+Secondary Keywords: {secondary}
+Long Tail Keywords: {long_tail}
+
+RULES:
+- Primary keyword:
+  ✔ H1
+  ✔ first 100 words
+  ✔ at least 2 H2s
+
+- Secondary:
+  ✔ natural usage
+
+- Long-tail:
+  ✔ FAQ section
+
+DO NOT keyword stuff.
 
 ---
 
@@ -32,65 +57,56 @@ Currency: {plan.get("local_context", {}).get("currency")}
 Budget Range: {plan.get("local_context", {}).get("budget_range")}
 Transport: {plan.get("local_context", {}).get("transport_examples")}
 Notes: {plan.get("local_context", {}).get("practical_notes")}
----
+
 MANDATORY:
-- Use INR (₹)
-- Include at least 2 insider tips
-- Include “mistakes to avoid” section
-- Include local transport details
-- Avoid generic tone
+- Use ₹
+- Include insider tips
+- Include mistakes to avoid
+- Include transport details
+
 ---
 
- STRUCTURE
+STRUCTURE
 
 {json.dumps(plan.get("sections"), indent=2)}
 
 ---
 
- WRITING RULES (STRICT)
+WRITING RULES (STRICT)
 
-- Write like you have personally visited the place
-- Use ₹ (INR) only (NO USD)
-- Mention REAL locations (not generic words)
+- Write like personal experience
 - Include:
-  - practical costs
-  - routes
-  - timings
-  - mistakes to avoid
-- Add small personal observations
-- Avoid phrases like:
-  - "famous for"
-  - "known for"
-  - "offers something for everyone"
+  ✔ costs
+  ✔ routes
+  ✔ timing
+  ✔ mistakes
 
-- Add problem-solving:
-  - what can go wrong
-  - what to avoid
-  - better alternatives
 - ADD STRONG OPINIONS
-   - Include at least 2 bold or non-obvious opinions
-   - Challenge common travel advice
+- ADD NON-OBVIOUS INSIGHTS
 
-- ADD FAQ SECTION AT END
-   Include 3–5 questions like:
-   - Is Kerala good in monsoon?
-   - Is houseboat worth it?
-   - What is daily budget?
+- Avoid:
+  "famous for"
+  "known for"
 
-- ADD NATURAL INTERNAL LINKS
-   - Mention related topics naturally inside content
 ---
 
- OUTPUT
+STRUCTURE RULES
+
+- H1 → keyword
+- H2 → problems
+- H3 → breakdown
+- Add FAQ section (3–5)
+- Add quick answer snippet
+
+---
+
+OUTPUT
 
 - 1500–2000 words
-- Proper headings (H1, H2)
-- Natural paragraphs (NOT bullet dump)
-- Engaging + practical
+- Proper headings
+- Natural flow
 
-Write the FULL blog.
-
-Return ONLY blog content.
+Return ONLY blog.
 """
 
     response = safe_generate(lambda: client.models.generate_content(
