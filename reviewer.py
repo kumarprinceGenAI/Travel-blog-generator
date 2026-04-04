@@ -2,11 +2,42 @@ from google import genai
 import os
 from dotenv import load_dotenv
 from utils import safe_generate
-from researcher import extract_json
 
 load_dotenv()
 
 client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+
+
+def extract_json(text):
+    import re
+    import json
+
+    if not text:
+        print("[JSON ERROR] Empty response")
+        return None
+
+    text = re.sub(r"```json|```", "", text).strip()
+
+    # 🔴 HARD CHECK: must contain braces
+    if "{" not in text or "}" not in text:
+        print("[JSON ERROR] Missing braces")
+        return None
+
+    try:
+        return json.loads(text)
+    except:
+        pass
+
+    # 🔁 fallback extraction
+    obj_match = re.search(r"\{.*\}", text, re.DOTALL)
+    if obj_match:
+        try:
+            return json.loads(obj_match.group(0))
+        except:
+            pass
+
+    print("[JSON FIX FAILED] Raw output:", text[:200])
+    return None
 
 
 def reviewer_agent(blog: str):
@@ -60,6 +91,7 @@ VERDICT RULE
 - avg ≥ 8.5 → good
 
 ---
+
 STRICT ENFORCEMENT:
 
 If the blog feels even slightly generic:
@@ -73,7 +105,9 @@ If you give score ≥ 9:
 
 If unsure:
 → default to 7–8 range
+
 ---
+
 If you give:
 - uniqueness_score ≥ 9
 - content_score ≥ 9
@@ -84,6 +118,7 @@ You MUST ensure:
 - personal tone present
 
 Else → reduce score
+
 ---
 
 OUTPUT
@@ -105,9 +140,27 @@ Blog:
 Return ONLY JSON.
 """
 
-    response = safe_generate(lambda: client.models.generate_content(
-        model="models/gemini-2.5-flash",
-        contents=prompt
-    ))
+    def generate():
+        response = client.models.generate_content(
+            model="models/gemini-2.5-flash",
+            contents=prompt
+        )
 
-    return extract_json(response.text)
+        parsed = extract_json(response.text)
+
+        # 🔴 STRICT STRUCTURE VALIDATION
+        required_keys = [
+            "content_score",
+            "seo_score",
+            "readability_score",
+            "uniqueness_score",
+            "verdict",
+            "feedback"
+        ]
+
+        if not parsed or not all(k in parsed for k in required_keys):
+            raise ValueError("Invalid reviewer JSON structure")
+
+        return parsed
+
+    return safe_generate(generate)

@@ -29,21 +29,19 @@ def extract_json(text):
 
     if not text:
         print("[JSON ERROR] Empty response")
-        return {}
+        return None
 
     text = re.sub(r"```json|```", "", text).strip()
+
+    # 🔴 HARD CHECK: must contain closing brace
+    if "{" not in text or "}" not in text:
+        print("[JSON ERROR] Missing braces")
+        return None
 
     try:
         return json.loads(text)
     except:
         pass
-
-    array_match = re.search(r"\[.*\]", text, re.DOTALL)
-    if array_match:
-        try:
-            return {"topics": json.loads(array_match.group(0))}
-        except:
-            pass
 
     obj_match = re.search(r"\{.*\}", text, re.DOTALL)
     if obj_match:
@@ -52,8 +50,8 @@ def extract_json(text):
         except:
             pass
 
-    print("[JSON FIX FAILED] Raw output:", text[:200])  # 🔥 ADD THIS
-    return {}  # 🔥 CRITICAL: no exception
+    print("[JSON FIX FAILED] Raw output:", text[:200])
+    return None  # 🔴 IMPORTANT CHANGE
 
 
 # 🔹 Scoring function (unchanged)

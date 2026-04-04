@@ -195,6 +195,27 @@ def reviewer_node(state):
 
     r = state["review"]
 
+    required_keys = [
+    "content_score",
+    "seo_score",
+    "readability_score",
+    "uniqueness_score"
+]
+
+    if not r or any(k not in r for k in required_keys):
+        logger.error("[Reviewer] Invalid response → applying fallback")
+
+        r = {
+            "content_score": 6.5,
+            "seo_score": 6.5,
+            "readability_score": 7.0,
+            "uniqueness_score": 6.5,
+            "verdict": "needs_improvement",
+            "feedback": ["Fallback applied due to invalid reviewer output"]
+        }
+
+        state["review"] = r
+    
     score = (
         r["content_score"] +
         r["seo_score"] +
