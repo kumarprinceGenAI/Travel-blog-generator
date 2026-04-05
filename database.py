@@ -1,13 +1,19 @@
-import sqlite3
 import os
+import psycopg2
+from psycopg2.extras import RealDictCursor
 
+DATABASE_URL = os.getenv("DATABASE_URL")
 
-DB_PATH = os.getenv("DB_PATH", "blogs.db")
 
 def get_connection():
-    conn = sqlite3.connect(DB_PATH, check_same_thread=False)
-    conn.row_factory = sqlite3.Row  # 🔥 CRITICAL FIX
-    return conn
+    if not DATABASE_URL:
+        raise ValueError("DATABASE_URL not set")
+
+    return psycopg2.connect(
+        DATABASE_URL,
+        sslmode="require",  # 🔥 REQUIRED for Supabase
+        cursor_factory=RealDictCursor
+    )
 
 
 def init_db():
@@ -17,57 +23,53 @@ def init_db():
     # ✅ Blogs table
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS blogs (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        id SERIAL PRIMARY KEY,
         topic TEXT,
-        slug TEXT,
+        slug TEXT UNIQUE,
         blog TEXT,
         html TEXT,
-        seo TEXT,
-        images TEXT,
-        created_at TEXT
+        seo JSONB,
+        images JSONB,
+        created_at TIMESTAMP
     )
     """)
 
     # ✅ Metrics table
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS metrics (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        id SERIAL PRIMARY KEY,
         topic TEXT,
-        score REAL,
+        score FLOAT,
         iterations INTEGER,
         status TEXT,
-        created_at TEXT,
+        created_at TIMESTAMP,
         content_length INTEGER,
         error_count INTEGER,
         improved BOOLEAN,
-        time_taken REAL,
-        improvement_delta REAL
+        time_taken FLOAT,
+        improvement_delta FLOAT
     )
     """)
 
     # ✅ Topic embeddings
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS topic_embeddings (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        id SERIAL PRIMARY KEY,
         topic TEXT,
-        embedding BLOB
+        embedding BYTEA
     )
     """)
 
     # ✅ Versioning
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS blog_versions (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        id SERIAL PRIMARY KEY,
         topic TEXT,
         iteration INTEGER,
         content TEXT,
-        created_at TEXT
+        created_at TIMESTAMP
     )
     """)
-
-
-
-
 
     conn.commit()
     conn.close()

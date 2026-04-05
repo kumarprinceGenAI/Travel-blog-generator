@@ -1,10 +1,8 @@
 import json
 from datetime import datetime
-from database import get_connection, init_db
+from database import get_connection
 from logger import logger
 import time
-
-
 
 
 # -----------------------------
@@ -20,7 +18,7 @@ def generate_slug(topic: str):
 
 
 # -----------------------------
-# SAVE BLOG (FIXED)
+# SAVE BLOG
 # -----------------------------
 def save_blog(data: dict):
     conn = get_connection()
@@ -28,28 +26,30 @@ def save_blog(data: dict):
 
     slug = generate_slug(data.get("topic", ""))
 
-    # ensure uniqueness
-    existing = cursor.execute(
-        "SELECT COUNT(*) FROM blogs WHERE slug = ?", (slug,)
-    ).fetchone()[0]
+    # ✅ ensure uniqueness
+    cursor.execute(
+        "SELECT COUNT(*) as count FROM blogs WHERE slug = %s",
+        (slug,)
+    )
+    existing = cursor.fetchone()["count"]
 
     if existing:
         slug = f"{slug}-{int(time.time())}"
 
     images = data.get("images", [])
-    images_json = json.dumps(images)
+    seo = data.get("seo", {})
 
     cursor.execute("""
     INSERT INTO blogs (topic, blog, html, seo, slug, images, created_at)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    VALUES (%s, %s, %s, %s, %s, %s, %s)
     """, (
         data.get("topic"),
         data.get("blog"),
         data.get("html") or "",
-        json.dumps(data.get("seo") or {}),
+        seo,          # ✅ JSONB direct
         slug,
-        images_json,
-        datetime.now().isoformat()
+        images,       # ✅ JSONB direct
+        datetime.now()
     ))
 
     conn.commit()
@@ -59,7 +59,7 @@ def save_blog(data: dict):
 
 
 # -----------------------------
-# GET BLOGS (LIST)
+# GET BLOGS
 # -----------------------------
 def get_blogs():
     conn = get_connection()
@@ -76,26 +76,24 @@ def get_blogs():
 
     return [
         {
-            "id": r[0],
-            "topic": r[1],
-            "created_at": r[2],
-            "slug": r[3]
+            "id": r["id"],
+            "topic": r["topic"],
+            "created_at": r["created_at"],
+            "slug": r["slug"]
         }
         for r in rows
     ]
 
 
 # -----------------------------
-# GET SINGLE BLOG
+# GET BLOG BY ID
 # -----------------------------
 def get_blog(blog_id: int):
     conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("""
-    SELECT id, topic, blog, html, seo, created_at, slug, images
-    FROM blogs
-    WHERE id = ?
+    SELECT * FROM blogs WHERE id = %s
     """, (blog_id,))
 
     row = cursor.fetchone()
@@ -105,14 +103,14 @@ def get_blog(blog_id: int):
         return None
 
     return {
-        "id": row[0],
-        "topic": row[1],
-        "blog": row[2],
-        "html": row[3],
-        "seo": json.loads(row[4]) if row[4] else {},
-        "created_at": row[5],
-        "slug": row[6],
-        "images": json.loads(row[7]) if row[7] else []
+        "id": row["id"],
+        "topic": row["topic"],
+        "blog": row["blog"],
+        "html": row["html"],
+        "seo": row["seo"] or {},
+        "created_at": row["created_at"],
+        "slug": row["slug"],
+        "images": row["images"] or []
     }
 
 
@@ -137,19 +135,23 @@ def get_latest_blog():
         return {}
 
     return {
-        "topic": row[0],
-        "blog": row[1],
-        "html": row[2],
-        "seo": json.loads(row[3]) if row[3] else {},
-        "images": json.loads(row[4]) if row[4] else []
+        "topic": row["topic"],
+        "blog": row["blog"],
+        "html": row["html"],
+        "seo": row["seo"] or {},
+        "images": row["images"] or []
     }
 
+
+# -----------------------------
+# GET BLOG BY SLUG
+# -----------------------------
 def get_blog_by_slug(slug: str):
     conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("""
-        SELECT * FROM blogs WHERE slug = ?
+        SELECT * FROM blogs WHERE slug = %s
     """, (slug,))
 
     row = cursor.fetchone()
@@ -163,7 +165,7 @@ def get_blog_by_slug(slug: str):
         "topic": row["topic"],
         "slug": row["slug"],
         "html": row["html"],
-        "images": json.loads(row["images"]) if row["images"] else [],
-        "seo": json.loads(row["seo"]) if row["seo"] else {},
+        "images": row["images"] or [],
+        "seo": row["seo"] or {},
         "created_at": row["created_at"]
     }

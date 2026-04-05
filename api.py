@@ -24,7 +24,9 @@ def startup():
 def home():
     try:
         conn = get_connection()
-        conn.execute("SELECT 1")
+        cursor = conn.cursor()
+        cursor.execute("SELECT 1")
+        cursor.fetchone()
         conn.close()
         return {"status": "ok"}
     except:
@@ -47,7 +49,10 @@ def generate_blog():
 
         return {"status": "success"}
     except Exception as e:
-        return {"status": "failed", "error": str(e)}
+        raise HTTPException(
+        status_code=500,
+        detail=str(e)
+    )
     
 # =========================
 # GET ALL BLOGS (SUMMARY)
@@ -105,11 +110,12 @@ def latest_blog():
     return blog.get("html", "")
 
 
-@app.get("/blog/{slug}")
+
+@app.get("/blog/{slug}", response_class=HTMLResponse)
 def fetch_blog(slug: str):
     blog = get_blog_by_slug(slug)
 
     if not blog:
         raise HTTPException(status_code=404, detail="Blog not found")
 
-    return blog
+    return blog.get("html", "")
