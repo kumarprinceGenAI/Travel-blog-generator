@@ -11,7 +11,7 @@ import os
 #     os.makedirs("/var/data")
 
 # DB_PATH = "blogs.db"
-DB_PATH = os.getenv("DB_PATH", "/var/data/blogs.db")
+DB_PATH = os.getenv("DB_PATH", "/tmp/blogs.db")
 
 def get_connection():
     conn = sqlite3.connect(DB_PATH, check_same_thread=False)
