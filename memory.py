@@ -13,7 +13,7 @@ def is_duplicate(topic: str) -> bool:
     cursor = conn.cursor()
 
     cursor.execute(
-        "SELECT 1 FROM blogs WHERE LOWER(topic) = LOWER(?) LIMIT 1",
+        "SELECT 1 FROM blogs WHERE LOWER(topic) = LOWER(%s) LIMIT 1",
         (topic,)
     )
 

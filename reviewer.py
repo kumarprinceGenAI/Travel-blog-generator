@@ -16,28 +16,38 @@ def extract_json(text):
         print("[JSON ERROR] Empty response")
         return None
 
+    # 🔥 remove markdown wrappers
     text = re.sub(r"```json|```", "", text).strip()
 
-    # 🔴 HARD CHECK: must contain braces
-    if "{" not in text or "}" not in text:
-        print("[JSON ERROR] Missing braces")
+    # 🔥 extract JSON block safely
+    match = re.search(r"\{.*\}", text, re.DOTALL)
+    if not match:
+        print("[JSON ERROR] No JSON object found")
         return None
 
+    text = match.group(0)
+
+    # 🔥 FIX COMMON LLM BREAKS
     try:
         return json.loads(text)
     except:
         pass
 
-    # 🔁 fallback extraction
-    obj_match = re.search(r"\{.*\}", text, re.DOTALL)
-    if obj_match:
-        try:
-            return json.loads(obj_match.group(0))
-        except:
-            pass
+    # 🔧 FIX 1: single quotes → double quotes
+    fixed = text.replace("'", '"')
 
-    print("[JSON FIX FAILED] Raw output:", text[:200])
-    return None
+    # 🔧 FIX 2: remove trailing commas
+    fixed = re.sub(r",\s*}", "}", fixed)
+    fixed = re.sub(r",\s*]", "]", fixed)
+
+    # 🔧 FIX 3: fix broken strings like: it'
+    fixed = re.sub(r'(?<!\\)"([^"]*?)\n', r'"\1"', fixed)
+
+    try:
+        return json.loads(fixed)
+    except:
+        print("[JSON FIX FAILED] Raw output:", text[:200])
+        return None
 
 
 def reviewer_agent(blog: str):
@@ -121,14 +131,20 @@ Else → reduce score
 
 ---
 
-OUTPUT
+OUTPUT (STRICT JSON ONLY)
+
+Rules:
+- Use DOUBLE quotes only
+- No trailing commas
+- No text outside JSON
+- Ensure valid JSON format
 
 {{
   "content_score": number,
   "seo_score": number,
   "readability_score": number,
   "uniqueness_score": number,
-  "verdict": "...",
+  "verdict": "good|needs_improvement",
   "feedback": ["...", "..."]
 }}
 

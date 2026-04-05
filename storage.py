@@ -1,9 +1,9 @@
-import json
+
 from datetime import datetime
 from database import get_connection
 from logger import logger
 import time
-
+from psycopg2.extras import Json
 
 # -----------------------------
 # SLUG GENERATOR
@@ -46,9 +46,9 @@ def save_blog(data: dict):
         data.get("topic"),
         data.get("blog"),
         data.get("html") or "",
-        seo,          # ✅ JSONB direct
+        Json(seo),          # ✅ JSONB direct
         slug,
-        images,       # ✅ JSONB direct
+        Json(images),       # ✅ JSONB direct
         datetime.now()
     ))
 

@@ -1,0 +1,522 @@
+2026-04-05 09:09:07,875 | INFO | Blog generation triggered
+2026-04-05 09:09:07,889 | INFO | Researcher started
+2026-04-05 09:09:08,314 | ERROR | Pipeline failed: syntax error at end of input
+LINE 7:     
+            ^
+Traceback (most recent call last):
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\scheduler.py", line 17, in run_job
+    result = graph.invoke(initial_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\main.py", line 3296, in invoke
+    for chunk in self.stream(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\main.py", line 2727, in stream
+    for _ in runner.tick(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\_retry.py", line 96, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\graph.py", line 82, in researcher_node
+    data = researcher_agent()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\researcher.py", line 95, in researcher_agent
+    top_topics = get_top_topics(limit=3)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\metrics.py", line 165, in get_top_topics
+    cursor.execute("""
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.SyntaxError: syntax error at end of input
+LINE 7:     
+            ^
+
+During task with name 'researcher' and id '209c3f82-68db-61dc-4b42-41b46fba16cc'
+2026-04-05 09:15:17,521 | INFO | Blog generation triggered
+2026-04-05 09:15:17,525 | INFO | Researcher started
+2026-04-05 09:15:19,555 | INFO | [Signals] Trends: ['digital nomad visa', 'budget travel india', 'visa free countries for indians', 'cheap international trips from india', 'monsoon travel india']
+2026-04-05 09:15:19,555 | INFO | [Signals] Normalized: ['budget travel india', 'visa free countries for indians', 'monsoon travel india', 'digital nomad visa', 'cheap international trips from india']
+2026-04-05 09:15:19,557 | INFO | [Signals] Pain Points: ['hidden travel costs', 'tourist scams', 'transport confusion in new cities', 'overcrowded tourist places', 'budget planning mistakes', 'visa issues for indians', 'language barriers while traveling']
+2026-04-05 09:15:19,557 | INFO | [Signals] Normalized: ['overcrowded tourist places', 'budget planning mistakes', 'transport confusion in new cities', 'hidden travel costs', 'visa issues for indians', 'language barriers while traveling', 'tourist scams']
+2026-04-05 09:15:19,557 | INFO | [Researcher] Trends Used:
+- budget travel india
+- visa free countries for indians
+- monsoon travel india
+- digital nomad visa
+- cheap international trips from india
+2026-04-05 09:15:19,557 | INFO | [Researcher] Pain Points Used:
+- overcrowded tourist places
+- budget planning mistakes
+- transport confusion in new cities
+- hidden travel costs
+- visa issues for indians
+- language barriers while traveling
+- tourist scams
+2026-04-05 09:15:19,557 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:15:40,287 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:15:40,539 | ERROR | Pipeline failed: syntax error at or near ")"
+LINE 1: SELECT 1 FROM blogs WHERE LOWER(topic) = LOWER(?) LIMIT 1
+                                                        ^
+Traceback (most recent call last):
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\scheduler.py", line 17, in run_job
+    result = graph.invoke(initial_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\main.py", line 3296, in invoke
+    for chunk in self.stream(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\main.py", line 2727, in stream
+    for _ in runner.tick(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\_retry.py", line 96, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\graph.py", line 95, in researcher_node
+    if is_duplicate(title):
+       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\memory.py", line 15, in is_duplicate
+    cursor.execute(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.SyntaxError: syntax error at or near ")"
+LINE 1: SELECT 1 FROM blogs WHERE LOWER(topic) = LOWER(?) LIMIT 1
+                                                        ^
+
+During task with name 'researcher' and id '61664199-a206-8b19-7ac8-d5b0a5139b19'
+2026-04-05 09:18:11,539 | INFO | Blog generation triggered
+2026-04-05 09:18:11,541 | INFO | Researcher started
+2026-04-05 09:18:13,904 | INFO | [Signals] Trends: ['digital nomad visa', 'budget travel india', 'visa free countries for indians', 'cheap international trips from india', 'monsoon travel india']
+2026-04-05 09:18:13,904 | INFO | [Signals] Normalized: ['cheap international trips from india', 'visa free countries for indians', 'monsoon travel india', 'digital nomad visa', 'budget travel india']
+2026-04-05 09:18:13,904 | INFO | [Signals] Pain Points: ['hidden travel costs', 'tourist scams', 'transport confusion in new cities', 'overcrowded tourist places', 'budget planning mistakes', 'visa issues for indians', 'language barriers while traveling']
+2026-04-05 09:18:13,904 | INFO | [Signals] Normalized: ['hidden travel costs', 'transport confusion in new cities', 'language barriers while traveling', 'overcrowded tourist places', 'visa issues for indians', 'budget planning mistakes', 'tourist scams']
+2026-04-05 09:18:13,904 | INFO | [Researcher] Trends Used:
+- cheap international trips from india
+- visa free countries for indians
+- monsoon travel india
+- digital nomad visa
+- budget travel india
+2026-04-05 09:18:13,904 | INFO | [Researcher] Pain Points Used:
+- hidden travel costs
+- transport confusion in new cities
+- language barriers while traveling
+- overcrowded tourist places
+- visa issues for indians
+- budget planning mistakes
+- tourist scams
+2026-04-05 09:18:13,906 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:18:34,984 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:18:36,112 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:18:37,236 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:18:38,670 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:18:39,797 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:18:41,278 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:18:41,456 | INFO | [Researcher] Diverse Topics: ['Monsoon Magic, Not Mayhem: Your Guide to Crowd-Free & Scam-Proof Getaways in Kerala', 'Navigating Local Life: A Self-Guided Foodie Tour in Old Delhi, Beating Language Barriers & Transport Chaos']
+2026-04-05 09:18:41,459 | INFO | [Researcher] Trend Topics: ['From Beach to Boardroom: Setting Up Your Digital Nomad Life in Bali Without the Hidden Headaches (Internet, Tax, & Community Guide)', 'Ultimate 2-Week Southeast Asia Itinerary for Indians: Visa-Free & Under ₹60,000 (Excl. Flights)', 'Beyond the Backpack: Uncovering the True Cost of a Sustainable Homestay Trip in Sikkim (And How to Budget Smarter)']
+2026-04-05 09:18:41,459 | INFO | [Researcher] Selecting HIGH-SCORE TREND topic
+2026-04-05 09:18:41,459 | INFO | Selected Topic: From Beach to Boardroom: Setting Up Your Digital Nomad Life in Bali Without the Hidden Headaches (Internet, Tax, & Community Guide) | Score: 9.299999999999999
+2026-04-05 09:18:41,459 | INFO | Planner running for topic: From Beach to Boardroom: Setting Up Your Digital Nomad Life in Bali Without the Hidden Headaches (Internet, Tax, & Community Guide)
+2026-04-05 09:18:41,814 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:19:07,245 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:19:07,249 | INFO | Writer generating blog
+2026-04-05 09:19:07,249 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:19:42,462 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:19:42,978 | ERROR | Pipeline failed: syntax error at or near ","
+LINE 3:     VALUES (?, ?, ?, ?)
+                     ^
+Traceback (most recent call last):
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\scheduler.py", line 17, in run_job
+    result = graph.invoke(initial_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\main.py", line 3296, in invoke
+    for chunk in self.stream(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\main.py", line 2727, in stream
+    for _ in runner.tick(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\_retry.py", line 96, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\graph.py", line 201, in writer_node
+    save_version(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\versioning.py", line 11, in save_version
+    cursor.execute("""
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.SyntaxError: syntax error at or near ","
+LINE 3:     VALUES (?, ?, ?, ?)
+                     ^
+
+During task with name 'writer' and id '97dbf3f6-43db-51cd-da48-6629f136ee16'
+2026-04-05 09:22:42,308 | INFO | Blog generation triggered
+2026-04-05 09:22:42,311 | INFO | Researcher started
+2026-04-05 09:22:45,039 | INFO | [Signals] Trends: ['digital nomad visa', 'budget travel india', 'visa free countries for indians', 'cheap international trips from india', 'monsoon travel india']
+2026-04-05 09:22:45,039 | INFO | [Signals] Normalized: ['visa free countries for indians', 'cheap international trips from india', 'budget travel india', 'monsoon travel india', 'digital nomad visa']
+2026-04-05 09:22:45,039 | INFO | [Signals] Pain Points: ['hidden travel costs', 'tourist scams', 'transport confusion in new cities', 'overcrowded tourist places', 'budget planning mistakes', 'visa issues for indians', 'language barriers while traveling']
+2026-04-05 09:22:45,039 | INFO | [Signals] Normalized: ['visa issues for indians', 'transport confusion in new cities', 'tourist scams', 'hidden travel costs', 'language barriers while traveling', 'budget planning mistakes', 'overcrowded tourist places']
+2026-04-05 09:22:45,039 | INFO | [Researcher] Trends Used:
+- visa free countries for indians
+- cheap international trips from india
+- budget travel india
+- monsoon travel india
+- digital nomad visa
+2026-04-05 09:22:45,039 | INFO | [Researcher] Pain Points Used:
+- visa issues for indians
+- transport confusion in new cities
+- tourist scams
+- hidden travel costs
+- language barriers while traveling
+- budget planning mistakes
+- overcrowded tourist places
+2026-04-05 09:22:45,039 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:23:03,677 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:23:05,077 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:23:06,327 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:23:07,941 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:23:09,211 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:23:10,542 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:23:10,748 | INFO | [Researcher] Diverse Topics: ['Hanoi by Wheels: Mastering Local Transport & Dodging Tourist Traps (Motorbikes, Buses & Ride-Hailing Apps Explained)', "Kerala's Untamed Spice Route: An Off-the-Beaten-Path Culinary Journey (Bypassing Crowds, Tasting Authenticity)"]
+2026-04-05 09:23:10,748 | INFO | [Researcher] Trend Topics: ['Beyond the Beaches: Practicalities & Hidden Costs for Digital Nomads in Chiang Mai (Visa, Co-working & Community Hacks)', 'Family Fun on a Budget: Your Visa-Free 10-Day Island Hopping Itinerary in Thailand for Indian Travelers', 'Monsoon Magic on a Shoestring: Your 5-Day Backpacking Guide to Meghalaya for Indian Travelers (No Visa, No Crowds)']
+2026-04-05 09:23:10,748 | INFO | [Researcher] Selecting HIGH-SCORE TREND topic
+2026-04-05 09:23:10,748 | INFO | Selected Topic: Beyond the Beaches: Practicalities & Hidden Costs for Digital Nomads in Chiang Mai (Visa, Co-working & Community Hacks) | Score: 8.8
+2026-04-05 09:23:10,749 | INFO | Planner running for topic: Beyond the Beaches: Practicalities & Hidden Costs for Digital Nomads in Chiang Mai (Visa, Co-working & Community Hacks)
+2026-04-05 09:23:11,431 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:23:35,016 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:23:35,016 | INFO | Writer generating blog
+2026-04-05 09:23:35,016 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:24:13,167 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:24:13,494 | INFO | Reviewer evaluating blog
+2026-04-05 09:24:13,494 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:24:31,709 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:24:31,712 | INFO | Reviewer scores: {'content_score': 9.0, 'seo_score': 9.5, 'readability_score': 9.0, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ["**Unparalleled Uniqueness & Authenticity:** This blog stands head and shoulders above the competition due to its laser-focused niche: 'Your Real-World Blueprint from an Indian Nomad.' This isn't a generic guide; it's a deeply personal, 'no-holds-barred' account filled with hard-won insights, strong opinions, and direct advice tailored specifically for an Indian audience (INR budget, specific visa pathways). This level of targeted authenticity is exceptionally rare and profoundly valuable.", "**Exceptional Practical Depth & Actionability:** Every section is a masterclass in practical advice. The 'Actionable,' 'Insider Tip,' and 'Mistake to Avoid' segments are goldmines of concrete, non-obvious strategies that genuinely equip a new nomad for success. Topics like hidden costs, specific visa nuances, and forex solutions are demystified with clarity and authority.", '**Exemplary SEO & Readability:** The blog demonstrates a rare mastery of both search engine optimization and user experience. All strict SEO criteria (keyword in H1/intro, multiple H2s, snippet-friendly section, FAQ, currency symbols) are not just met, but integrated seamlessly. The conversational, engaging tone, combined with impeccable formatting (headings, bullet points, bolding), ensures even dense information is easily digestible.', '**Minor Refinement for Utmost Completeness:** While already outstanding, a *very* brief mention of the possibility (or difficulty) of opening a local Thai bank account for ultra-long-term stays could add a final layer of financial insight. Additionally, perhaps a quick note on varying internet quality in different neighborhoods beyond just mentioning providers, would enhance the already stellar connectivity advice.']} | Avg: 9.25
+2026-04-05 09:24:31,712 | INFO | Avg Score: 9.25 | Iterations: 0
+2026-04-05 09:24:31,712 | INFO | High-quality blog → skipping improver
+2026-04-05 09:24:31,712 | INFO | SEO started
+2026-04-05 09:24:31,715 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:24:45,876 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:24:45,876 | INFO | Image generation started
+2026-04-05 09:24:45,876 | INFO | [Images] 🚀 Starting smart image generation
+2026-04-05 09:24:45,876 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:24:53,394 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:24:53,394 | INFO | [Images] Prompts: ['Thai long-stay visa application', 'Chiang Mai budget surprise costs', 'Hidden Chiang Mai rental gem', 'Modern Chiang Mai co-working space', 'Chiang Mai genuine nomad meetup']
+2026-04-05 09:24:54,168 | INFO | [Images] ✅ Found image for → Thai long-stay visa application
+2026-04-05 09:24:55,607 | INFO | [Images] ✅ Found image for → Chiang Mai budget surprise costs
+2026-04-05 09:24:56,836 | INFO | [Images] ✅ Found image for → Hidden Chiang Mai rental gem
+2026-04-05 09:24:58,165 | INFO | [Images] ✅ Found image for → Modern Chiang Mai co-working space
+2026-04-05 09:24:59,395 | INFO | [Images] ✅ Found image for → Chiang Mai genuine nomad meetup
+2026-04-05 09:24:59,396 | INFO | [Images] ✅ Total images: 5
+2026-04-05 09:24:59,396 | INFO | [Images] Attached 5 images
+2026-04-05 09:24:59,398 | INFO | Rendering HTML
+2026-04-05 09:24:59,451 | INFO | [Renderer] ✅ Injected → Navigating the Visa Maze: Your Chiang Mai Long-Stay Blueprint (Beyond Tourist Visas) (score: 1.0)
+2026-04-05 09:24:59,455 | INFO | [Renderer] ✅ Injected → The Unseen Bill: Hidden Costs that Gobble Your Chiang Mai Budget (score: 1.0)
+2026-04-05 09:24:59,459 | INFO | [Renderer] ✅ Injected → Beyond Airbnb: Smart Stays &amp; Stealth Deals for Digital Nomads in Chiang Mai (score: 0.97)
+2026-04-05 09:24:59,463 | INFO | [Renderer] ✅ Injected → Powering Your Hustle: Unlocking Chiang Mai's Best Co-working &amp; Connectivity Secrets (score: 0.98)
+2026-04-05 09:24:59,467 | INFO | [Renderer] ✅ Injected → Beyond the Facebook Group: Forge Authentic Connections in Chiang Mai's Nomad Scene (score: 1.0)
+2026-04-05 09:24:59,469 | INFO | [Renderer] HTML rendering complete
+2026-04-05 09:24:59,469 | INFO | [Renderer] HTML length: 27723
+2026-04-05 09:24:59,471 | INFO | Saving blog to database
+2026-04-05 09:25:00,413 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:25:00,848 | ERROR | Pipeline failed: can't adapt type 'dict'
+Traceback (most recent call last):
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\scheduler.py", line 17, in run_job
+    result = graph.invoke(initial_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\main.py", line 3296, in invoke
+    for chunk in self.stream(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\main.py", line 2727, in stream
+    for _ in runner.tick(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\_retry.py", line 96, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\graph.py", line 365, in save_node
+    save_blog(data)
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\storage.py", line 42, in save_blog
+    cursor.execute("""
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.ProgrammingError: can't adapt type 'dict'
+During task with name 'save' and id '203ae44f-b1f0-4294-e59c-bf88ad61f0ca'
+2026-04-05 09:29:00,026 | INFO | Blog generation triggered
+2026-04-05 09:29:00,032 | INFO | Researcher started
+2026-04-05 09:29:02,793 | INFO | [Signals] Trends: ['digital nomad visa', 'budget travel india', 'visa free countries for indians', 'cheap international trips from india', 'monsoon travel india']
+2026-04-05 09:29:02,793 | INFO | [Signals] Normalized: ['monsoon travel india', 'budget travel india', 'digital nomad visa', 'cheap international trips from india', 'visa free countries for indians']
+2026-04-05 09:29:02,797 | INFO | [Signals] Pain Points: ['hidden travel costs', 'tourist scams', 'transport confusion in new cities', 'overcrowded tourist places', 'budget planning mistakes', 'visa issues for indians', 'language barriers while traveling']
+2026-04-05 09:29:02,797 | INFO | [Signals] Normalized: ['hidden travel costs', 'tourist scams', 'budget planning mistakes', 'transport confusion in new cities', 'visa issues for indians', 'overcrowded tourist places', 'language barriers while traveling']
+2026-04-05 09:29:02,797 | INFO | [Researcher] Trends Used:
+- monsoon travel india
+- budget travel india
+- digital nomad visa
+- cheap international trips from india
+- visa free countries for indians
+2026-04-05 09:29:02,798 | INFO | [Researcher] Pain Points Used:
+- hidden travel costs
+- tourist scams
+- budget planning mistakes
+- transport confusion in new cities
+- visa issues for indians
+- overcrowded tourist places
+- language barriers while traveling
+2026-04-05 09:29:02,798 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:29:18,157 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:29:20,105 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:29:21,947 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:29:23,375 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:29:25,008 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:29:26,847 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:29:27,067 | INFO | [Researcher] Diverse Topics: ['Escape the Crowds: Offbeat Monsoon Getaways in Kerala & Karnataka (with Rain-Proof Itineraries & Scammer Warnings)', 'Beyond the Temples: Experiencing Authentic Rural Life in Odisha (A Guide to Local Transport, Food & Basic Phrases)']
+2026-04-05 09:29:27,067 | INFO | [Researcher] Trend Topics: ['Beyond Bali: Your Budget Guide to Securing a Digital Nomad Visa in Thailand (and Staying Under $1000/Month)', '7 Days, ₹50,000 Budget: How to Master a Visa-Free Trip to Vietnam from India (Avoiding Hidden Costs & Transport Headaches)', 'Trekking Mount Rinjani on a Budget: Essential Planning, Gear & Avoiding Scams in Lombok, Indonesia']
+2026-04-05 09:29:27,067 | INFO | [Researcher] Selecting HIGH-SCORE TREND topic
+2026-04-05 09:29:27,068 | INFO | Selected Topic: Beyond Bali: Your Budget Guide to Securing a Digital Nomad Visa in Thailand (and Staying Under $1000/Month) | Score: 9.1
+2026-04-05 09:29:27,068 | INFO | Planner running for topic: Beyond Bali: Your Budget Guide to Securing a Digital Nomad Visa in Thailand (and Staying Under $1000/Month)
+2026-04-05 09:29:27,614 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:29:43,247 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:29:43,247 | INFO | Writer generating blog
+2026-04-05 09:29:43,247 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:29:45,362 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:30:21,952 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:30:22,773 | INFO | Reviewer evaluating blog
+2026-04-05 09:30:22,775 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:30:41,410 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:30:41,410 | INFO | Reviewer scores: {'content_score': 9.0, 'seo_score': 9.0, 'readability_score': 9.0, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ["Uniqueness & Niche Targeting: This blog is a masterclass in carving out a highly specific niche. Its laser-focus on 'Indian remote workers' aiming for a strict budget (under ₹80,000/month) is genuinely rare. The 'Real Talk' tone, personal anecdotes ('spill the chai,' 'my strong opinion'), and genuine, non-obvious insights—such as advocating for Khon Kaen/Udon Thani over common hubs, the 'local discount' strategy, and specific advice on Indian bank statement scrutiny—make this content exceptionally original and valuable. It emphatically avoids any hint of genericism, meriting its outstanding uniqueness score.", "Actionable & Opinionated Content: The promise of 'Real Talk' is not just met but exceeded. The blog is packed with strong opinions ('My strong opinion?', 'Trust me, I’ve seen...'), direct advice, and hyper-practical strategies that clearly stem from lived experience. From navigating visa complexities for Indian applicants to granular budget hacks, scam avoidance, and cultural integration, the authoritative yet relatable voice provides an unparalleled blueprint, significantly bolstering its content quality.", 'Comprehensive SEO & Structure: This submission flawlessly executes all strict SEO requirements, from optimal keyword placement in H1 and intro to multiple keyword-rich H2s, a perfectly crafted snippet-friendly section, and a well-organized FAQ. Crucially, this robust SEO architecture is achieved without any compromise on readability or natural flow, showcasing a rare balance between technical optimization and engaging content.', 'Exceptional Readability & Engagement: The writing is remarkably engaging and effortlessly digestible. Despite the depth of detail, the conversational tone, strategic use of headings, bolding, and bullet points, and relatable language ensure that complex information is conveyed with absolute clarity. The narrative maintains reader interest throughout, making the learning process both informative and enjoyable, a hallmark of truly high-quality writing.', 'Strict Enforcement Compliance: This blog has not only met but exceeded all stringent evaluation criteria and penalty checks. It is unequivocally non-generic, replete with strong opinions and specific insights, and meticulously adheres to all technical requirements, including the consistent and correct use of the Rupee symbol (₹).']} | Avg: 9.125
+2026-04-05 09:30:41,423 | INFO | Avg Score: 9.125 | Iterations: 0
+2026-04-05 09:30:41,423 | INFO | High-quality blog → skipping improver
+2026-04-05 09:30:41,424 | INFO | SEO started
+2026-04-05 09:30:41,425 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:30:56,433 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:30:56,436 | INFO | Image generation started
+2026-04-05 09:30:56,437 | INFO | [Images] 🚀 Starting smart image generation
+2026-04-05 09:30:56,437 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:30:58,490 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:31:07,012 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:31:07,012 | INFO | [Images] Prompts: ['Indian working remotely Thailand paperwork', 'Indian financial proof Thailand visa', 'Indian rupees Thai visa calendar', 'Indian remote worker Thailand rupee', 'Thai long-term rental apartment keys']
+2026-04-05 09:31:08,855 | INFO | [Images] ✅ Found image for → Indian working remotely Thailand paperwork
+2026-04-05 09:31:10,697 | INFO | [Images] ✅ Found image for → Indian financial proof Thailand visa
+2026-04-05 09:31:11,929 | INFO | [Images] ✅ Found image for → Indian rupees Thai visa calendar
+2026-04-05 09:31:12,879 | INFO | [Images] ✅ Found image for → Indian remote worker Thailand rupee
+2026-04-05 09:31:13,768 | INFO | [Images] ✅ Found image for → Thai long-term rental apartment keys
+2026-04-05 09:31:13,768 | INFO | [Images] ✅ Total images: 5
+2026-04-05 09:31:13,768 | INFO | [Images] Attached 5 images
+2026-04-05 09:31:13,768 | INFO | Rendering HTML
+2026-04-05 09:31:13,782 | INFO | [Renderer] ✅ Injected → Decoding Thailand's DNV for Indians: Beyond the Hype to Real Requirements (score: 1.0)
+2026-04-05 09:31:13,786 | INFO | [Renderer] ✅ Injected → Essential Documentation for Indian Applicants: The Income Proof Nuances (score: 1.0)
+2026-04-05 09:31:13,788 | INFO | [Renderer] ✅ Injected → Calculating the Actual Visa Processing Time and Costs (in ₹) (score: 1.0)
+2026-04-05 09:31:13,791 | INFO | [Renderer] ✅ Injected → The ₹80,000 Nomad Blueprint: Smart Spending for Long-Term Thailand Stays (score: 1.0)
+2026-04-05 09:31:13,794 | INFO | [Renderer] ✅ Injected → Accommodation Hacks: Securing Long-Term Rentals (score: 1.0)
+2026-04-05 09:31:13,794 | INFO | [Renderer] HTML rendering complete
+2026-04-05 09:31:13,794 | INFO | [Renderer] HTML length: 24762
+2026-04-05 09:31:13,795 | INFO | Saving blog to database
+2026-04-05 09:31:14,791 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:31:15,814 | INFO | Blog saved with slug + images
+2026-04-05 09:31:16,325 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:31:16,800 | ERROR | Pipeline failed: syntax error at or near ","
+LINE 1: ...NSERT INTO topic_embeddings (topic, embedding) VALUES (?, ?)
+                                                                   ^
+Traceback (most recent call last):
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\scheduler.py", line 17, in run_job
+    result = graph.invoke(initial_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\main.py", line 3296, in invoke
+    for chunk in self.stream(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\main.py", line 2727, in stream
+    for _ in runner.tick(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\pregel\_retry.py", line 96, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\graph.py", line 373, in save_node
+    cursor.execute(
+  File "C:\Users\thetr\Desktop\GENAI PROJECT\Travel-blog-generator\venv\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.SyntaxError: syntax error at or near ","
+LINE 1: ...NSERT INTO topic_embeddings (topic, embedding) VALUES (?, ?)
+                                                                   ^
+
+During task with name 'save' and id '8f76a7e1-abb3-3a4a-082c-72582345ced4'
+2026-04-05 09:41:48,687 | INFO | Blog generation triggered
+2026-04-05 09:41:48,690 | INFO | Researcher started
+2026-04-05 09:41:51,942 | INFO | [Signals] Trends: ['digital nomad visa', 'budget travel india', 'visa free countries for indians', 'cheap international trips from india', 'monsoon travel india']
+2026-04-05 09:41:51,945 | INFO | [Signals] Normalized: ['monsoon travel india', 'visa free countries for indians', 'budget travel india', 'cheap international trips from india', 'digital nomad visa']
+2026-04-05 09:41:51,945 | INFO | [Signals] Pain Points: ['hidden travel costs', 'tourist scams', 'transport confusion in new cities', 'overcrowded tourist places', 'budget planning mistakes', 'visa issues for indians', 'language barriers while traveling']
+2026-04-05 09:41:51,945 | INFO | [Signals] Normalized: ['transport confusion in new cities', 'visa issues for indians', 'hidden travel costs', 'overcrowded tourist places', 'language barriers while traveling', 'tourist scams', 'budget planning mistakes']
+2026-04-05 09:41:51,945 | INFO | [Researcher] Trends Used:
+- monsoon travel india
+- visa free countries for indians
+- budget travel india
+- cheap international trips from india
+- digital nomad visa
+2026-04-05 09:41:51,945 | INFO | [Researcher] Pain Points Used:
+- transport confusion in new cities
+- visa issues for indians
+- hidden travel costs
+- overcrowded tourist places
+- language barriers while traveling
+- tourist scams
+- budget planning mistakes
+2026-04-05 09:41:51,945 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:42:08,592 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:42:10,190 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:42:11,483 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:42:12,884 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:42:14,555 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:42:16,397 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:42:16,452 | INFO | [Researcher] Diverse Topics: ['Monsoon Magic in Maharashtra: An Offbeat Road Trip Itinerary Through the Western Ghats (Weather-Proofing & Route Planning)', "Beyond the Backwaters: Uncovering Kerala's Hidden Gems & Local Transport Hacks (Avoiding Peak Season Crowds)", "Surviving the Streets of Varanasi: A Traveler's Guide to Avoiding Scams and Embracing Local Culture"]
+2026-04-05 09:42:16,453 | INFO | [Researcher] Trend Topics: ['Navigating Visa-Free Southeast Asia: A 7-Day Budget Itinerary for Indian Travelers', 'Digital Nomad Life in Chiang Mai: A Budget-Friendly Guide to Co-working, Local Transport & Community']
+2026-04-05 09:42:16,453 | INFO | [Researcher] Selecting BALANCED DIVERSE topic
+2026-04-05 09:42:16,453 | INFO | Selected Topic: Monsoon Magic in Maharashtra: An Offbeat Road Trip Itinerary Through the Western Ghats (Weather-Proofing & Route Planning) | Score: 8.5
+2026-04-05 09:42:16,454 | INFO | Planner running for topic: Monsoon Magic in Maharashtra: An Offbeat Road Trip Itinerary Through the Western Ghats (Weather-Proofing & Route Planning)
+2026-04-05 09:42:16,853 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:42:39,535 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:42:39,541 | INFO | Writer generating blog
+2026-04-05 09:42:39,541 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:43:10,055 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:43:10,558 | INFO | Reviewer evaluating blog
+2026-04-05 09:43:10,558 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:43:32,684 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:43:34,690 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:43:53,674 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:43:53,680 | INFO | Reviewer scores: {'content_score': 9.0, 'seo_score': 9.0, 'readability_score': 9.0, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ["**Content Quality (9.0/10):** This is a rare find. The content is exceptionally detailed, actionable, and brimming with non-obvious insights directly addressing the common pain points of monsoon travel in the Western Ghats. From the pre-trip vehicle check (underbody inspection? Brilliant!) to the 'Golden Hour' driving hack and the multi-SIM strategy, the advice is concrete and derived from genuine, raw experience. The author's strong opinions and proactive solutions for avoiding crowds and ensuring safety elevate this far beyond typical travel fodder.", "**SEO Quality (9.0/10):** Outstanding. Every single strict SEO requirement has been met with precision. The keyword is perfectly integrated into the H1 and intro, H2s are keyword-rich, and the FAQ section is comprehensive and highly snippet-friendly. The inclusion of '₹' for pricing throughout the budget section is a critical detail often missed, earning full marks here.", '**Readability (9.0/10):** The blog is a masterclass in clear, engaging communication. The structure is flawless, utilizing headings, subheadings, and bullet points effectively. The language is direct, personal, and avoids unnecessary jargon, making complex advice (like driving in fog) easy to digest. The consistent, opinionated tone keeps the reader hooked from start to finish.', "**Uniqueness (9.5/10):** This blog explicitly, and successfully, rejects generic advice. The author's voice is distinct, opinionated, and personal, delivering hard-won lessons rather than curated lists. Insights like avoiding the main Kaas Plateau entry, leveraging local knowledge for hidden gems and road conditions, and the granular detail on preparation are truly non-obvious and demonstrate a profound understanding of offbeat monsoon travel. This is precisely what a unique travel blog should be.", "**Overall:** This is an exceptionally well-crafted travel blog. It not only provides practical, actionable advice but does so with a distinct voice and an unwavering commitment to authenticity and utility. It's a genuine guide for those seeking a deeper, safer, and more immersive monsoon adventure, proving that an itinerary can be both inspiring and incredibly practical. A truly commendable effort."]} | Avg: 9.125
+2026-04-05 09:43:53,680 | INFO | Avg Score: 9.125 | Iterations: 0
+2026-04-05 09:43:53,680 | INFO | High-quality blog → skipping improver
+2026-04-05 09:43:53,683 | INFO | SEO started
+2026-04-05 09:43:53,683 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:44:03,305 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:44:03,308 | INFO | Image generation started
+2026-04-05 09:44:03,308 | INFO | [Images] 🚀 Starting smart image generation
+2026-04-05 09:44:03,308 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:44:09,208 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:44:09,208 | INFO | [Images] Prompts: ['Misty Sahyadri fort monsoon', 'Foggy Ghats monsoon driving', 'Offbeat Maharashtra Ghats trail', 'Quiet Mulshi backwater expanse', 'Quiet Tapola lake shores']
+2026-04-05 09:44:10,028 | INFO | [Images] ✅ Found image for → Misty Sahyadri fort monsoon
+2026-04-05 09:44:10,824 | INFO | [Images] ✅ Found image for → Foggy Ghats monsoon driving
+2026-04-05 09:44:11,591 | INFO | [Images] ✅ Found image for → Offbeat Maharashtra Ghats trail
+2026-04-05 09:44:12,470 | INFO | [Images] ✅ Found image for → Quiet Mulshi backwater expanse
+2026-04-05 09:44:13,265 | INFO | [Images] ✅ Found image for → Quiet Tapola lake shores
+2026-04-05 09:44:13,265 | INFO | [Images] ✅ Total images: 5
+2026-04-05 09:44:13,266 | INFO | [Images] Attached 5 images
+2026-04-05 09:44:13,266 | INFO | Rendering HTML
+2026-04-05 09:44:13,273 | WARNING | [Renderer] ❌ No good match → Beyond the Clouds: Crafting Your Offbeat Maharashtra Monsoon Escape (best: 0)
+2026-04-05 09:44:13,273 | WARNING | [Renderer] ❌ No good match → Monsoon Driving Mastery: Essential Gear & Ghat Safety Protocols (best: 0)
+2026-04-05 09:44:13,273 | WARNING | [Renderer] ❌ No good match → The 'Cloud Chaser's Trail': A 5-Day Optimized Western Ghats Loop from Pune/Mumbai (best: 0)
+2026-04-05 09:44:13,273 | WARNING | [Renderer] ❌ No good match → Day 1: Embrace the Mulshi Mystique & Devkund's Secluded Charm (Pune/Mumbai to Bhira/Tamhini Ghat region) (best: 0)
+2026-04-05 09:44:13,273 | WARNING | [Renderer] ❌ No good match → Day 2: Tapola's Lesser-Known Shores & Forested Drives (Bhira to Tapola's Quiet Corners) (best: 0)
+2026-04-05 09:44:13,273 | INFO | [Renderer] HTML rendering complete
+2026-04-05 09:44:13,273 | INFO | [Renderer] HTML length: 20404
+2026-04-05 09:44:13,278 | INFO | Saving blog to database
+2026-04-05 09:44:14,260 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:44:15,283 | INFO | Blog saved with slug + images
+2026-04-05 09:44:15,795 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:44:16,821 | INFO | Metrics | Score: 9.125 | Iter: 0 | Len: 2953 | Errors: 2 | Delta: 0.0 | Time: 147.64s
+2026-04-05 09:44:16,821 | INFO | Blog saved to DB
+2026-04-05 09:44:16,822 | INFO | Generated Topic: Monsoon Magic in Maharashtra: An Offbeat Road Trip Itinerary Through the Western Ghats (Weather-Proofing & Route Planning)
+2026-04-05 09:44:16,822 | INFO | HTML length: 20404
+2026-04-05 09:44:16,822 | INFO | Blog generation completed successfully
+2026-04-05 09:49:49,301 | INFO | Blog generation triggered
+2026-04-05 09:49:49,303 | INFO | Researcher started
+2026-04-05 09:49:51,782 | INFO | [Signals] Trends: ['digital nomad visa', 'budget travel india', 'visa free countries for indians', 'cheap international trips from india', 'monsoon travel india']
+2026-04-05 09:49:51,782 | INFO | [Signals] Normalized: ['budget travel india', 'visa free countries for indians', 'monsoon travel india', 'cheap international trips from india', 'digital nomad visa']
+2026-04-05 09:49:51,782 | INFO | [Signals] Pain Points: ['hidden travel costs', 'tourist scams', 'transport confusion in new cities', 'overcrowded tourist places', 'budget planning mistakes', 'visa issues for indians', 'language barriers while traveling']
+2026-04-05 09:49:51,782 | INFO | [Signals] Normalized: ['overcrowded tourist places', 'hidden travel costs', 'visa issues for indians', 'transport confusion in new cities', 'language barriers while traveling', 'tourist scams', 'budget planning mistakes']
+2026-04-05 09:49:51,782 | INFO | [Researcher] Trends Used:
+- budget travel india
+- visa free countries for indians
+- monsoon travel india
+- cheap international trips from india
+- digital nomad visa
+2026-04-05 09:49:51,782 | INFO | [Researcher] Pain Points Used:
+- overcrowded tourist places
+- hidden travel costs
+- visa issues for indians
+- transport confusion in new cities
+- language barriers while traveling
+- tourist scams
+- budget planning mistakes
+2026-04-05 09:49:51,782 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:50:12,861 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:50:14,201 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:50:15,425 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:50:16,758 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:50:17,738 | WARNING | [Embedding Retry 1] Server disconnected without sending a response.
+2026-04-05 09:50:19,315 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:50:20,955 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:50:21,258 | INFO | [Researcher] Diverse Topics: ['Monsoon Magic in Meghalaya: A 7-Day Offbeat Itinerary for Crowd-Free Waterfalls & Living Root Bridges', "Beyond the Beaches: An 8-Day Cultural Itinerary to Explore Odisha's Temples, Tribes & Untouched Coastlines (Avoiding Tourist Scams & Language Barriers)"]
+2026-04-05 09:50:21,258 | INFO | [Researcher] Trend Topics: ['Backpacking Bliss in Laos: A 10-Day Visa-Free Budget Itinerary from Luang Prabang to Vang Vieng (Hidden Costs & Transport Hacks for Indians)', "Vietnam's Ha Giang Loop: A 6-Day Self-Guided Motorcycle Itinerary for Epic Northern Landscapes (Navigating Remote Roads & Essential Budgeting)", "Thailand's Digital Nomad Visa: A Step-by-Step Guide to Relocating to Chiang Mai (Cost of Living, Co-working & Community Hacks)"]
+2026-04-05 09:50:21,258 | INFO | [Researcher] Selecting BALANCED DIVERSE topic
+2026-04-05 09:50:21,258 | INFO | Selected Topic: Monsoon Magic in Meghalaya: A 7-Day Offbeat Itinerary for Crowd-Free Waterfalls & Living Root Bridges | Score: 8.5
+2026-04-05 09:50:21,261 | INFO | Planner running for topic: Monsoon Magic in Meghalaya: A 7-Day Offbeat Itinerary for Crowd-Free Waterfalls & Living Root Bridges
+2026-04-05 09:50:21,626 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:50:52,802 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:50:52,905 | INFO | Writer generating blog
+2026-04-05 09:50:52,908 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:51:24,035 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:51:25,043 | INFO | Reviewer evaluating blog
+2026-04-05 09:51:25,043 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:51:42,905 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:51:42,907 | INFO | Reviewer scores: {'content_score': 9.5, 'seo_score': 9.5, 'readability_score': 9.0, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ["Content Quality: Exceptional. The blog delivers on its 'offbeat' promise with remarkable precision, offering highly specific, actionable advice that genuinely avoids tourist traps. The strong, opinionated tone (e.g., 'non-negotiable,' 'you're better than that') provides a rare depth of insight, making the content not just informative but genuinely persuasive. The 'Quick Answer Snippet' is a highly practical and user-centric addition.", "SEO Quality: Stellar. All critical SEO checks are met with flying colors: keyword in H1 and intro, multiple keyword-rich H2s, a comprehensive FAQ section, and the excellent 'Quick Answer Snippet' for immediate SERP visibility. The extensive use of the '₹' symbol throughout for detailed budgeting also prevents a significant penalty, contributing to its top-tier SEO performance.", 'Readability: Excellent. The blog is a masterclass in structuring complex information. Clear headings (H1, H2s, H3s), effective use of bullet points, and bolded text break down dense travel details into easily digestible chunks. The conversational yet authoritative tone keeps the reader engaged, ensuring a smooth and highly informative experience.', "Uniqueness: Outstanding. This blog fundamentally redefines what an 'offbeat' itinerary should be. It actively challenges conventional travel, offering deeply personal anecdotes, fierce opinions (e.g., 'do not attempt... without engaging local guides'), and genuinely non-obvious insights (e.g., specific timing for crowd avoidance, local drying hacks, Wei Sawdong over Nohkalikai). It's a rare and refreshing voice that stands head and shoulders above generic travel content."]} | Avg: 9.375
+2026-04-05 09:51:42,907 | INFO | Avg Score: 9.375 | Iterations: 0
+2026-04-05 09:51:42,907 | INFO | High-quality blog → skipping improver
+2026-04-05 09:51:42,907 | INFO | SEO started
+2026-04-05 09:51:42,907 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:51:56,632 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:51:56,634 | INFO | Image generation started
+2026-04-05 09:51:56,634 | INFO | [Images] 🚀 Starting smart image generation
+2026-04-05 09:51:56,634 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 09:52:02,174 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 09:52:02,174 | INFO | [Images] Prompts: ['Monsoon Meghalaya hidden village', 'Waterproof trekking gear misty trail', 'Empty Meghalaya living root bridge', 'Misty Shillong market street', 'Dawki crystal river Shnongpdeng']
+2026-04-05 09:52:02,947 | INFO | [Images] ✅ Found image for → Monsoon Meghalaya hidden village
+2026-04-05 09:52:03,733 | INFO | [Images] ✅ Found image for → Waterproof trekking gear misty trail
+2026-04-05 09:52:04,690 | INFO | [Images] ✅ Found image for → Empty Meghalaya living root bridge
+2026-04-05 09:52:05,682 | INFO | [Images] ✅ Found image for → Misty Shillong market street
+2026-04-05 09:52:07,145 | INFO | [Images] ✅ Found image for → Dawki crystal river Shnongpdeng
+2026-04-05 09:52:07,145 | INFO | [Images] ✅ Total images: 5
+2026-04-05 09:52:07,145 | INFO | [Images] Attached 5 images
+2026-04-05 09:52:07,145 | INFO | Rendering HTML
+2026-04-05 09:52:07,157 | WARNING | [Renderer] ❌ No good match → Unveiling Meghalaya's Monsoon Magic: Why Offbeat is Your Only Option (best: 0)
+2026-04-05 09:52:07,157 | WARNING | [Renderer] ❌ No good match → Monsoon Preparedness: Gear & Hacks for a Comfortable Meghalaya Trip (best: 0)
+2026-04-05 09:52:07,157 | WARNING | [Renderer] ❌ No good match → Strategic Route Planning: Unlocking Crowd-Free Meghalaya Waterfalls & Bridges (best: 0)
+2026-04-05 09:52:07,157 | WARNING | [Renderer] ❌ No good match → Day 1: Gateway to the Clouds & Shillong's Hidden Charms (Guwahati to Shillong) (best: 0)
+2026-04-05 09:52:07,157 | WARNING | [Renderer] ❌ No good match → Day 2: Mawphlang's Sacred Wisdom & Dawki's Crystal Secrets (Shillong to Shnongpdeng) (best: 0)
+2026-04-05 09:52:07,157 | INFO | [Renderer] HTML rendering complete
+2026-04-05 09:52:07,157 | INFO | [Renderer] HTML length: 23576
+2026-04-05 09:52:07,162 | INFO | Saving blog to database
+2026-04-05 09:52:08,373 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:52:09,702 | INFO | Blog saved with slug + images
+2026-04-05 09:52:10,213 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 09:52:11,547 | INFO | Metrics | Score: 9.375 | Iter: 0 | Len: 3349 | Errors: 2 | Delta: 0.0 | Time: 141.73s
+2026-04-05 09:52:11,547 | INFO | Blog saved to DB
+2026-04-05 09:52:11,547 | INFO | Generated Topic: Monsoon Magic in Meghalaya: A 7-Day Offbeat Itinerary for Crowd-Free Waterfalls & Living Root Bridges
+2026-04-05 09:52:11,547 | INFO | HTML length: 23576
+2026-04-05 09:52:11,547 | INFO | Blog generation completed successfully

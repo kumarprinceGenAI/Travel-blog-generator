@@ -371,7 +371,7 @@ def save_node(state):
         cursor = conn.cursor()
 
         cursor.execute(
-            "INSERT INTO topic_embeddings (topic, embedding) VALUES (?, ?)",
+            "INSERT INTO topic_embeddings (topic, embedding) VALUES (%s, %s)",
             (state["topic"], pickle.dumps(embedding))
         )
 

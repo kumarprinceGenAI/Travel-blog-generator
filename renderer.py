@@ -14,7 +14,7 @@ def similarity(a, b):
 
 
 def extract_headings(html):
-    return re.findall(r"<h[2-3][^>]*>(.*?)</h[2-3]>", html)
+    return re.findall(r"<h[2-3][^>]*>(.*%s)</h[2-3]>", html)
 
 
 def inject_images(html: str, images: list):

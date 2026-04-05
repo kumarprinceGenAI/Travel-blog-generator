@@ -13,7 +13,7 @@ def get_score_distribution():
     cursor = conn.cursor()
 
     cursor.execute("SELECT score FROM metrics")
-    scores = [row[0] for row in cursor.fetchall() if row[0] is not None]
+    scores = [row["score"] for row in cursor.fetchall() if row["score"] is not None]
 
     conn.close()
 
@@ -46,18 +46,19 @@ def detect_regression(window=5):
         SELECT score FROM metrics
         WHERE score IS NOT NULL
         ORDER BY id DESC
-        LIMIT ?
+        LIMIT %s
     """, (window,))
-    recent = [row[0] for row in cursor.fetchall()]
+    recent = [row["score"] for row in cursor.fetchall()]
 
     # Previous window
     cursor.execute("""
         SELECT score FROM metrics
         WHERE score IS NOT NULL
         ORDER BY id DESC
-        LIMIT ? OFFSET ?
+        LIMIT %s OFFSET %s
     """, (window, window))
-    previous = [row[0] for row in cursor.fetchall()]
+    
+    previous = [row["score"] for row in cursor.fetchall()]
 
     conn.close()
 
@@ -122,7 +123,7 @@ def score_stability():
     cursor = conn.cursor()
 
     cursor.execute("SELECT score FROM metrics WHERE score IS NOT NULL")
-    scores = [row[0] for row in cursor.fetchall()]
+    scores = [row["score"] for row in cursor.fetchall()]
 
     conn.close()
 
