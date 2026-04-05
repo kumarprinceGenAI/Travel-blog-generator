@@ -4,6 +4,7 @@ from database import get_connection
 from logger import logger
 import time
 from psycopg2.extras import Json
+import os
 
 # -----------------------------
 # SLUG GENERATOR
@@ -54,7 +55,7 @@ def save_blog(data: dict):
 
     conn.commit()
     conn.close()
-
+    print("DB URL:", os.getenv("DATABASE_URL")[:50])
     logger.info("Blog saved with slug + images")
 
 
@@ -130,7 +131,7 @@ def get_latest_blog():
 
     row = cursor.fetchone()
     conn.close()
-
+    print("DB URL:", os.getenv("DATABASE_URL")[:50])
     if not row:
         return {}
 

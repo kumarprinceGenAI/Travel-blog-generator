@@ -3,19 +3,31 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 from dotenv import load_dotenv
 load_dotenv()
-DATABASE_URL = os.getenv("DATABASE_URL")
+# DATABASE_URL = os.getenv("DATABASE_URL")
 
+
+# def get_connection():
+
+#     if not DATABASE_URL:
+#         raise ValueError("DATABASE_URL not set")
+
+#     return psycopg2.connect(
+#         DATABASE_URL,
+#         sslmode="require",  # 🔥 REQUIRED for Supabase
+#         cursor_factory=RealDictCursor
+#     )
 
 def get_connection():
-    if not DATABASE_URL:
+    database_url = os.getenv("DATABASE_URL")
+
+    if not database_url:
         raise ValueError("DATABASE_URL not set")
 
     return psycopg2.connect(
-        DATABASE_URL,
-        sslmode="require",  # 🔥 REQUIRED for Supabase
+        database_url,
+        sslmode="require",
         cursor_factory=RealDictCursor
     )
-
 
 def init_db():
     conn = get_connection()
