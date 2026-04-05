@@ -5,6 +5,7 @@ from metrics import get_metrics_summary
 from scheduler import run_job
 from database import init_db,get_connection
 from fastapi.responses import HTMLResponse
+import os
 
 app = FastAPI()
 
