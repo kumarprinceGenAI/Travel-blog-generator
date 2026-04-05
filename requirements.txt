@@ -6,3 +6,5 @@ python-dotenv==1.2.2
 pytrends==4.9.2
 Requests==2.33.1
 schedule==1.2.2
+uvicorn
+google-generativeai
