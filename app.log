@@ -520,3 +520,164 @@ During task with name 'save' and id '8f76a7e1-abb3-3a4a-082c-72582345ced4'
 2026-04-05 09:52:11,547 | INFO | Generated Topic: Monsoon Magic in Meghalaya: A 7-Day Offbeat Itinerary for Crowd-Free Waterfalls & Living Root Bridges
 2026-04-05 09:52:11,547 | INFO | HTML length: 23576
 2026-04-05 09:52:11,547 | INFO | Blog generation completed successfully
+2026-04-05 11:13:28,664 | INFO | Blog generation triggered
+2026-04-05 11:13:28,669 | INFO | Researcher started
+2026-04-05 11:13:31,012 | INFO | [Signals] Trends: ['digital nomad visa', 'budget travel india', 'visa free countries for indians', 'cheap international trips from india', 'monsoon travel india']
+2026-04-05 11:13:31,012 | INFO | [Signals] Normalized: ['visa free countries for indians', 'digital nomad visa', 'monsoon travel india', 'budget travel india', 'cheap international trips from india']
+2026-04-05 11:13:31,012 | INFO | [Signals] Pain Points: ['hidden travel costs', 'tourist scams', 'transport confusion in new cities', 'overcrowded tourist places', 'budget planning mistakes', 'visa issues for indians', 'language barriers while traveling']
+2026-04-05 11:13:31,012 | INFO | [Signals] Normalized: ['transport confusion in new cities', 'budget planning mistakes', 'tourist scams', 'visa issues for indians', 'language barriers while traveling', 'overcrowded tourist places', 'hidden travel costs']
+2026-04-05 11:13:31,012 | INFO | [Researcher] Trends Used:
+- visa free countries for indians
+- digital nomad visa
+- monsoon travel india
+- budget travel india
+- cheap international trips from india
+2026-04-05 11:13:31,012 | INFO | [Researcher] Pain Points Used:
+- transport confusion in new cities
+- budget planning mistakes
+- tourist scams
+- visa issues for indians
+- language barriers while traveling
+- overcrowded tourist places
+- hidden travel costs
+2026-04-05 11:13:31,012 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:13:49,759 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:13:50,987 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:13:52,292 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:13:53,813 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:13:55,346 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:13:57,004 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:13:57,209 | INFO | [Researcher] Diverse Topics: ["Solo Trekking in the Western Ghats: A Woman's Guide to Safety, Planning & Essential Gear (Route Selection & Emergency Protocols)", 'Monsoon Escapes in Karnataka: A 5-Day Offbeat Coorg & Chikmagalur Road Trip Itinerary (Rainy Weather Hacks & Crowd-Free Spotting)', 'Unlocking Local Secrets: Your Chennai Cultural Immersion Guide for First-Timers (Navigating Language, Haggling & Authentic Experiences)']
+2026-04-05 11:13:57,218 | INFO | [Researcher] Trend Topics: ['Seamless Southeast Asia: A 10-Day Visa-Free Vietnam Itinerary from India Under ₹50,000 (Scam Avoidance & Local Transport Guide)', "Beyond the Visa: A Digital Nomad's Practical Guide to Living & Working Remotely in Thailand (Cost of Living, Co-working & Community Hacks)"]
+2026-04-05 11:13:57,218 | INFO | [Researcher] Selecting BALANCED DIVERSE topic
+2026-04-05 11:13:57,218 | INFO | Selected Topic: Solo Trekking in the Western Ghats: A Woman's Guide to Safety, Planning & Essential Gear (Route Selection & Emergency Protocols) | Score: 9.0
+2026-04-05 11:13:57,220 | INFO | Planner running for topic: Solo Trekking in the Western Ghats: A Woman's Guide to Safety, Planning & Essential Gear (Route Selection & Emergency Protocols)
+2026-04-05 11:13:57,618 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:14:19,119 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:14:19,119 | INFO | Writer generating blog
+2026-04-05 11:14:19,119 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:14:54,448 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:14:54,956 | INFO | Reviewer evaluating blog
+2026-04-05 11:14:54,956 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:15:13,804 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:15:13,806 | INFO | Reviewer scores: {'content_score': 9, 'seo_score': 9, 'readability_score': 8.5, 'uniqueness_score': 9, 'verdict': 'good', 'feedback': ["The content is exceptionally robust, delivering raw, unfiltered truths and actionable advice forged from genuine personal experience. The explicit 'strong opinion' sections, coupled with an unwavering empowering tone, elevate this guide beyond mere information into a powerful manifesto for solo female trekkers, justifying its rare content quality score.", 'SEO implementation is nearly flawless, meeting and exceeding all strict criteria. Strategic keyword placement within the H1, introduction, and multiple H2s, alongside the comprehensive FAQ and snippet sections, ensures maximum discoverability and utility, a rare achievement in on-page SEO.', 'Readability is very strong; the compelling and direct tone keeps the reader engaged, and the clear, logical structure with effective use of headings, subheadings, and lists makes complex safety information easily digestible and highly accessible.', "Uniqueness is a major strength, stemming directly from the author's deeply personal voice, 'boots-on-the-ground' insights, and courageous stance on sensitive safety topics for women. This is not a generic guide; it's a vital, authoritative, and exceptionally unique resource that sets a new standard."]} | Avg: 8.875
+2026-04-05 11:15:13,808 | INFO | Avg Score: 8.875 | Iterations: 0
+2026-04-05 11:15:13,808 | INFO | Sending to improver
+2026-04-05 11:15:13,810 | INFO | Improver refining blog
+2026-04-05 11:15:13,811 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:15:48,475 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:15:48,851 | INFO | Reviewer evaluating blog
+2026-04-05 11:15:48,851 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:16:03,672 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:16:03,677 | INFO | Reviewer scores: {'content_score': 9.0, 'seo_score': 9.0, 'readability_score': 9.0, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ["CONTENT QUALITY: Exceptionally strong. The blogger delivers precisely what was promised: 'not your average fluffy travel blog.' The content is packed with clear, unwavering opinions, personal experiences, and actionable advice. The depth of practical guidance, from mental preparedness to detailed gear, is outstanding. It is rare to see a travel blog so candid, direct, and opinionated while remaining extremely informative and structured.", "SEO QUALITY: Flawless execution. All strict SEO checks are met with precision: keyword in H1, intro, and multiple H2s, a well-structured FAQ section, and a snippet-friendly quick answer. The consistent and correct use of the '₹' symbol for currency avoids critical penalties. Keyword variations are integrated naturally, ensuring optimal discoverability and search engine performance. This level of SEO adherence is commendable.", 'READABILITY: Excellent. The content is highly digestible, thanks to clear language, logical flow, and impeccable use of formatting. Headings, subheadings, bullet points, and bold text are used effectively to break up information, making complex safety details easy to scan and comprehend. It strikes an optimal balance between detailed information and engaging, scannable presentation.', "UNIQUENESS: Outstanding. This blog genuinely stands out. The assertive, no-nonsense tone and the courage to actively 'debunk myths' about rural India's safety for solo women are incredibly refreshing. The wealth of non-obvious, deeply personal, and practical 'Insider Tips' and 'My strong opinion?' sections (e.g., detailed budget ranges, 'virtual buddy system', specific leech management) provide invaluable, hard-won insights that elevate it far above generic travel content. It is an exceptionally distinctive and valuable piece.", 'Overall, this blog is a masterclass in providing a truly valuable, opinionated, and impeccably structured resource for solo women trekkers. The commitment to safety, authenticity, and practical detail is exemplary.']} | Avg: 9.125
+2026-04-05 11:16:03,678 | INFO | Avg Score: 9.125 | Iterations: 1
+2026-04-05 11:16:03,678 | INFO | High-quality blog → skipping improver
+2026-04-05 11:16:03,681 | INFO | SEO started
+2026-04-05 11:16:03,682 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:16:14,641 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:16:14,643 | INFO | Image generation started
+2026-04-05 11:16:14,643 | INFO | [Images] 🚀 Starting smart image generation
+2026-04-05 11:16:14,645 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:16:20,698 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:16:20,700 | INFO | [Images] Prompts: ['Sweaty woman rugged Western Ghats', 'Woman studying Western Ghats trail map', 'Well-marked Western Ghats safe trail', 'Woman planning trek budget spreadsheet', 'Specialized Western Ghats trek gear layout']
+2026-04-05 11:16:22,004 | INFO | [Images] ✅ Found image for → Sweaty woman rugged Western Ghats
+2026-04-05 11:16:23,132 | INFO | [Images] ✅ Found image for → Woman studying Western Ghats trail map
+2026-04-05 11:16:24,969 | INFO | [Images] ✅ Found image for → Well-marked Western Ghats safe trail
+2026-04-05 11:16:26,740 | INFO | [Images] ✅ Found image for → Woman planning trek budget spreadsheet
+2026-04-05 11:16:28,660 | INFO | [Images] ✅ Found image for → Specialized Western Ghats trek gear layout
+2026-04-05 11:16:28,660 | INFO | [Images] ✅ Total images: 5
+2026-04-05 11:16:28,660 | INFO | [Images] Attached 5 images
+2026-04-05 11:16:28,660 | INFO | Rendering HTML
+2026-04-05 11:16:28,698 | WARNING | [Renderer] ❌ No good match → Beyond the Instagram Filter: Solo Woman Trekking Western Ghats - Realities & Mindset (best: 0)
+2026-04-05 11:16:28,699 | WARNING | [Renderer] ❌ No good match → Your Essential Solo Woman Trekking Western Ghats Safety Guide to Routes & Logistics (best: 0)
+2026-04-05 11:16:28,699 | WARNING | [Renderer] ❌ No good match → Curated Safe Havens: Vetting Solo-Friendly Trekking Routes (best: 0)
+2026-04-05 11:16:28,699 | WARNING | [Renderer] ❌ No good match → Your Pre-Trek Blueprint: Mastering Logistics, Budgeting & Local Transport Hacks (best: 0)
+2026-04-05 11:16:28,699 | WARNING | [Renderer] ❌ No good match → Beyond the Basics: Essential & Often-Overlooked Gear for the Solo Woman Trekker in the Western Ghats (best: 0)
+2026-04-05 11:16:28,699 | INFO | [Renderer] HTML rendering complete
+2026-04-05 11:16:28,701 | INFO | [Renderer] HTML length: 20924
+2026-04-05 11:16:28,702 | INFO | Saving blog to database
+2026-04-05 11:16:29,579 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:16:30,319 | INFO | Blog saved with slug + images
+2026-04-05 11:16:30,804 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:16:31,550 | INFO | Metrics | Score: 9.125 | Iter: 1 | Len: 3006 | Errors: 1 | Delta: 0.25 | Time: 182.53s
+2026-04-05 11:16:31,550 | INFO | Blog saved to DB
+2026-04-05 11:16:31,550 | INFO | Generated Topic: Solo Trekking in the Western Ghats: A Woman's Guide to Safety, Planning & Essential Gear (Route Selection & Emergency Protocols)
+2026-04-05 11:16:31,552 | INFO | HTML length: 20924
+2026-04-05 11:16:31,552 | INFO | Blog generation completed successfully
+2026-04-05 11:42:22,019 | INFO | Blog generation triggered
+2026-04-05 11:42:22,029 | INFO | Researcher started
+2026-04-05 11:42:24,403 | INFO | [Signals] Trends: ['digital nomad visa', 'budget travel india', 'visa free countries for indians', 'cheap international trips from india', 'monsoon travel india']
+2026-04-05 11:42:24,403 | INFO | [Signals] Normalized: ['digital nomad visa', 'visa free countries for indians', 'monsoon travel india', 'cheap international trips from india', 'budget travel india']
+2026-04-05 11:42:24,403 | INFO | [Signals] Pain Points: ['hidden travel costs', 'tourist scams', 'transport confusion in new cities', 'overcrowded tourist places', 'budget planning mistakes', 'visa issues for indians', 'language barriers while traveling']
+2026-04-05 11:42:24,403 | INFO | [Signals] Normalized: ['language barriers while traveling', 'budget planning mistakes', 'overcrowded tourist places', 'tourist scams', 'visa issues for indians', 'hidden travel costs', 'transport confusion in new cities']
+2026-04-05 11:42:24,403 | INFO | [Researcher] Trends Used:
+- digital nomad visa
+- visa free countries for indians
+- monsoon travel india
+- cheap international trips from india
+- budget travel india
+2026-04-05 11:42:24,403 | INFO | [Researcher] Pain Points Used:
+- language barriers while traveling
+- budget planning mistakes
+- overcrowded tourist places
+- tourist scams
+- visa issues for indians
+- hidden travel costs
+- transport confusion in new cities
+2026-04-05 11:42:24,403 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:42:42,074 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:42:43,275 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:42:44,912 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:42:46,655 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:42:47,985 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:42:49,522 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:42:49,929 | INFO | [Researcher] Diverse Topics: ['Kerala Backwater Bliss: A 5-Day Monsoon Itinerary to Escape Crowds & Navigate Local Transport Like a Pro (Rain-Proof Packing & Hidden Gem Villages)', 'Beyond Hoi An Lanterns: A 6-Day Immersive Central Vietnam Itinerary (Mastering Local Markets, Haggling Tips & Basic Vietnamese Phrases)']
+2026-04-05 11:42:49,929 | INFO | [Researcher] Trend Topics: ['The Ultimate 10-Day Visa-Free Thailand Itinerary from India: Chiang Mai & Krabi on a Budget (Avoiding Tourist Traps & Hidden Fees)', 'The Trans-Himalayan Spiti Experience: A 7-Day Winter Road Trip Itinerary (Permit Navigation, Altitude Sickness Prevention & Budgeting for Remote Travel)', "Malaysia's DE Rantau Visa for Indian Digital Nomads: A 30-Day Setup Guide (Finding Co-working, Local Transport & Beating Language Barriers)"]
+2026-04-05 11:42:49,929 | INFO | [Researcher] Selecting BALANCED DIVERSE topic
+2026-04-05 11:42:49,929 | INFO | Selected Topic: Kerala Backwater Bliss: A 5-Day Monsoon Itinerary to Escape Crowds & Navigate Local Transport Like a Pro (Rain-Proof Packing & Hidden Gem Villages) | Score: 8.6
+2026-04-05 11:42:49,934 | INFO | Planner running for topic: Kerala Backwater Bliss: A 5-Day Monsoon Itinerary to Escape Crowds & Navigate Local Transport Like a Pro (Rain-Proof Packing & Hidden Gem Villages)
+2026-04-05 11:42:50,340 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:43:21,675 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:43:21,678 | INFO | Writer generating blog
+2026-04-05 11:43:21,680 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:43:53,243 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:43:53,832 | INFO | Reviewer evaluating blog
+2026-04-05 11:43:53,833 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:44:09,529 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:44:09,531 | INFO | Reviewer scores: {'content_score': 9.5, 'seo_score': 9.0, 'readability_score': 9.0, 'uniqueness_score': 9.5, 'verdict': 'good', 'feedback': ["This blog is a rare gem, precisely what 'authentic discovery' promises. The content is brimming with strong opinions and an unapologetically personal tone, which immediately elevates it above generic travel guides. The explicit rejection of typical tourist traps, such as expensive houseboats, and the detailed advocacy for local transport and homestays are exceptional. The non-obvious insights into monsoon travel specifics, like strategic packing for quick-dry gear, navigating cash vs. digital payments in rural areas, and identifying specific hidden villages, are invaluable.", "SEO quality is commendably strong, with the main keyword 'Kerala backwaters monsoon itinerary 5 days' strategically placed in the H1 and introduction. The use of multiple keyword variations in H2s ('Monsoon Backwaters', 'Kerala Backwaters') effectively targets relevant searches. The presence of a comprehensive, snippet-friendly FAQ section and consistent use of the '₹' currency symbol further bolsters its SEO performance.", 'Readability is excellent. The direct, engaging language, coupled with effective use of headings, subheadings, bullet points, and bold text, makes the detailed information digestible and easy to follow. The conversational style keeps the reader hooked from start to finish.', "The uniqueness of this guide is its paramount strength. It doesn't just suggest 'offbeat'; it *shows* 'offbeat' with granular details – from mastering KSRTC buses and local ferries, to specific homestay costs in less-visited areas like Thanneermukkom and Kottayam, and immersive activities like toddy shop visits and family-run spice garden tours. This is a blueprint for genuine cultural immersion, making it a standout piece in a saturated travel niche.", 'Minor suggestion: While the content is rich, a small prompt to capture sensory details beyond sight (e.g., the specific sounds of monsoon rain on a thatched roof, the aroma of local spices being cooked) could further enhance the immersive feel for the reader.']} | Avg: 9.25
+2026-04-05 11:44:09,532 | INFO | Avg Score: 9.25 | Iterations: 0
+2026-04-05 11:44:09,532 | INFO | High-quality blog → skipping improver
+2026-04-05 11:44:09,534 | INFO | SEO started
+2026-04-05 11:44:09,534 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:44:18,249 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:44:18,251 | INFO | Image generation started
+2026-04-05 11:44:18,251 | INFO | [Images] 🚀 Starting smart image generation
+2026-04-05 11:44:18,253 | INFO | AFC is enabled with max remote calls: 10.
+2026-04-05 11:44:25,881 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-05 11:44:25,883 | INFO | [Images] Prompts: ['Empty Kerala backwaters monsoon', 'Rainproof Kerala backwaters attire', 'Kerala backwaters local ferry', 'Quiet Alappuzha backwater canal', 'Kumbalangi fishing village serene']
+2026-04-05 11:44:27,646 | INFO | [Images] ✅ Found image for → Empty Kerala backwaters monsoon
+2026-04-05 11:44:29,494 | INFO | [Images] ✅ Found image for → Rainproof Kerala backwaters attire
+2026-04-05 11:44:31,214 | INFO | [Images] ✅ Found image for → Kerala backwaters local ferry
+2026-04-05 11:44:32,552 | INFO | [Images] ✅ Found image for → Quiet Alappuzha backwater canal
+2026-04-05 11:44:33,943 | INFO | [Images] ✅ Found image for → Kumbalangi fishing village serene
+2026-04-05 11:44:33,943 | INFO | [Images] ✅ Total images: 5
+2026-04-05 11:44:33,943 | INFO | [Images] Attached 5 images
+2026-04-05 11:44:33,946 | INFO | Rendering HTML
+2026-04-05 11:44:33,979 | INFO | [Renderer] Headings found: 15
+2026-04-05 11:44:33,985 | INFO | [Renderer] Images received: 5
+2026-04-05 11:44:33,987 | INFO | [Renderer] ✅ Injected image 1
+2026-04-05 11:44:33,987 | INFO | [Renderer] ✅ Injected image 2
+2026-04-05 11:44:33,987 | INFO | [Renderer] ✅ Injected image 3
+2026-04-05 11:44:33,987 | INFO | [Renderer] ✅ Injected image 4
+2026-04-05 11:44:33,990 | INFO | [Renderer] ✅ Injected image 5
+2026-04-05 11:44:33,990 | INFO | [Renderer] HTML rendering complete
+2026-04-05 11:44:33,990 | INFO | [Renderer] HTML length: 24171
+2026-04-05 11:44:33,993 | INFO | Saving blog to database
+2026-04-05 11:44:34,848 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:44:35,505 | INFO | Blog saved with slug + images
+2026-04-05 11:44:35,948 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-05 11:44:36,674 | INFO | Metrics | Score: 9.25 | Iter: 0 | Len: 3205 | Errors: 1 | Delta: 0.0 | Time: 134.32s
+2026-04-05 11:44:36,675 | INFO | Blog saved to DB
+2026-04-05 11:44:36,675 | INFO | Generated Topic: Kerala Backwater Bliss: A 5-Day Monsoon Itinerary to Escape Crowds & Navigate Local Transport Like a Pro (Rain-Proof Packing & Hidden Gem Villages)
+2026-04-05 11:44:36,677 | INFO | HTML length: 24171
+2026-04-05 11:44:36,677 | INFO | Blog generation completed successfully

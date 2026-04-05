@@ -14,7 +14,7 @@ def similarity(a, b):
 
 
 def extract_headings(html):
-    return re.findall(r"<h[2-3][^>]*>(.*%s)</h[2-3]>", html)
+    return re.findall(r"(<h[2-3][^>]*>.*?</h[2-3]>)", html, re.DOTALL)
 
 
 def inject_images(html: str, images: list):
@@ -23,38 +23,54 @@ def inject_images(html: str, images: list):
 
     headings = extract_headings(html)
 
-    for img in images:
-        title = img.get("title")
-        url = img.get("url")
+    logger.info(f"[Renderer] Headings found: {len(headings)}")
+    logger.info(f"[Renderer] Images received: {len(images)}")
 
-        if not title or not url:
+    for i, heading in enumerate(headings):
+        if i >= len(images):
+            break
+
+        img = images[i]
+
+        if not isinstance(img, dict):
+            logger.warning(f"[Renderer] Invalid image format at index {i}")
             continue
 
+        url = img.get("url")
+        title = img.get("title", "travel image")
+
+        if not url:
+            logger.warning(f"[Renderer] Missing URL at index {i}")
+            continue
+
+        clean_title = re.sub(r"^#+\s*", "", title)
+
         image_tag = f"""
-        <img src="{url}" alt="{title}"
-        style="width:100%;border-radius:10px;margin:15px 0;" />
+        <div class="blog-image">
+            <img src="{url}" alt="{clean_title}"
+            style="width:100%;border-radius:10px;margin:15px 0;" loading="lazy"/>
+        </div>
         """
 
-        # 🔍 STEP 1: Find best matching heading
-        best_match = None
-        best_score = 0
+        idx = html.find(heading)
+        if idx != -1:
+            insert_pos = idx + len(heading)
+            html = html[:insert_pos] + image_tag + html[insert_pos:]
+            logger.info(f"[Renderer] ✅ Injected image {i+1}")
 
-        for h in headings:
-            score = similarity(title, h)
-            if score > best_score:
-                best_score = score
-                best_match = h
+    if "<img" not in html:
+        logger.warning("[Renderer] ⚠️ No images injected — fallback triggered")
 
-        # 🎯 STEP 2: Threshold match
-        if best_score > 0.6:
-            pattern = rf"(<h[2-3][^>]*>\s*{re.escape(best_match)}\s*</h[2-3]>)"
-            html = re.sub(pattern, r"\1" + image_tag, html, count=1)
-            logger.info(f"[Renderer] ✅ Injected → {best_match} (score: {round(best_score,2)})")
-        else:
-            logger.warning(f"[Renderer] ❌ No good match → {title} (best: {round(best_score,2)})")
+        for img in images[:3]:
+            if isinstance(img, dict) and img.get("url"):
+                html += f"""
+                <div class="blog-image">
+                    <img src="{img.get("url")}" alt="fallback"
+                    style="width:100%;border-radius:10px;margin:15px 0;" loading="lazy"/>
+                </div>
+                """
 
     return html
-
 
 def render_html(blog_text: str, images: list = None):
     """
