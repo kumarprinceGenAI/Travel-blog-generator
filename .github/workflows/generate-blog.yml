@@ -1,0 +1,47 @@
+name: Generate Blog 4x Daily
+
+on:
+  schedule:
+    # 4 times a day (UTC)
+    - cron: "30 0 * * *"    # 6:00 AM IST
+    - cron: "30 6 * * *"    # 12:00 PM IST
+    - cron: "30 12 * * *"   # 6:00 PM IST
+    - cron: "30 18 * * *"   # 12:00 AM IST
+
+  workflow_dispatch:
+
+# 🚫 Prevent overlapping runs
+concurrency:
+  group: blog-generation
+  cancel-in-progress: false
+
+jobs:
+  run-blog-generator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Call Blog Generation API (with retry)
+        run: |
+          for i in 1 2 3
+          do
+            echo "Attempt $i..."
+
+            response=$(curl -s -o response.txt -w "%{http_code}" \
+              -X POST "${{ secrets.API_URL }}/generate-blog" \
+              -H "x-api-key: ${{ secrets.CRON_SECRET }}")
+
+            echo "HTTP Status: $response"
+            cat response.txt
+
+            if [ "$response" -eq 200 ]; then
+              echo "✅ Blog generated successfully"
+              exit 0
+            fi
+
+            echo "❌ Failed attempt $i"
+            sleep $((10 * i))
+          done
+
+          echo "🚨 All retries failed"
+          exit 1

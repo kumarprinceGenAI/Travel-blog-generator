@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Header
 from graph import graph
 from storage import get_blogs, get_blog, get_latest_blog, get_blog_by_slug
 from metrics import get_metrics_summary
@@ -38,21 +38,20 @@ def home():
 # =========================
 
 @app.post("/generate-blog")
-def generate_blog():
+def generate_blog(x_api_key: str = Header(None)):
+    if x_api_key != os.getenv("CRON_SECRET"):
+        raise HTTPException(status_code=403, detail="Unauthorized")
+
     try:
         success = run_job()
+
         if not success:
-            raise HTTPException(
-                status_code=500,
-                detail="Blog generation failed"
-            )
+            raise HTTPException(status_code=500, detail="Blog generation failed")
 
         return {"status": "success"}
+
     except Exception as e:
-        raise HTTPException(
-        status_code=500,
-        detail=str(e)
-    )
+        raise HTTPException(status_code=500, detail=str(e))
     
 # =========================
 # GET ALL BLOGS (SUMMARY)
