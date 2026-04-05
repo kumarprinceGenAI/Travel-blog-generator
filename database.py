@@ -1,10 +1,26 @@
 import sqlite3
+import os
 
-DB_NAME = "blogs.db"
+# ✅ Persistent path (Render disk)
+# if os.name == "nt":
+#     DB_PATH = "blogs.db"
+# else:
+#     DB_PATH = "/var/data/blogs.db"
+
+# if not os.path.exists("/var/data"):
+#     os.makedirs("/var/data")
+
+# DB_PATH = "blogs.db"
+DB_PATH = os.getenv("DB_PATH", "/var/data/blogs.db")
+
+def get_connection():
+    conn = sqlite3.connect(DB_PATH, check_same_thread=False)
+    conn.row_factory = sqlite3.Row  # 🔥 CRITICAL FIX
+    return conn
 
 
 def init_db():
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     # ✅ Blogs table
@@ -12,9 +28,11 @@ def init_db():
     CREATE TABLE IF NOT EXISTS blogs (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         topic TEXT,
+        slug TEXT,
         blog TEXT,
         html TEXT,
         seo TEXT,
+        images TEXT,
         created_at TEXT
     )
     """)
@@ -27,11 +45,16 @@ def init_db():
         score REAL,
         iterations INTEGER,
         status TEXT,
-        created_at TEXT
+        created_at TEXT,
+        content_length INTEGER,
+        error_count INTEGER,
+        improved BOOLEAN,
+        time_taken REAL,
+        improvement_delta REAL
     )
     """)
 
-    # ✅ Topic Embeddings table (NEW)
+    # ✅ Topic embeddings
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS topic_embeddings (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -40,32 +63,7 @@ def init_db():
     )
     """)
 
-    # 🔥 SAFE COLUMN ADDITIONS (NO BREAKAGE)
-    try:
-        cursor.execute("ALTER TABLE metrics ADD COLUMN content_length INTEGER")
-    except:
-        pass
-
-    try:
-        cursor.execute("ALTER TABLE metrics ADD COLUMN error_count INTEGER")
-    except:
-        pass
-
-    try:
-        cursor.execute("ALTER TABLE metrics ADD COLUMN improved BOOLEAN")
-    except:
-        pass
-
-    try:
-        cursor.execute("ALTER TABLE metrics ADD COLUMN time_taken REAL")
-    except:
-        pass
-    try:
-        cursor.execute("ALTER TABLE metrics ADD COLUMN improvement_delta REAL")
-    except:
-        pass
-
-    # ✅ Versioning table
+    # ✅ Versioning
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS blog_versions (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -75,6 +73,10 @@ def init_db():
         created_at TEXT
     )
     """)
+
+
+
+
 
     conn.commit()
     conn.close()

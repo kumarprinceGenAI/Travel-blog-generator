@@ -1,11 +1,11 @@
 import sqlite3
 from datetime import datetime
+from database import get_connection
 
-DB_NAME = "blogs.db"
 
 
 def save_version(topic, iteration, content):
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("""

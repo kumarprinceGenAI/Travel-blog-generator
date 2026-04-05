@@ -1,7 +1,6 @@
 import sqlite3
 from datetime import datetime
-
-DB_NAME = "blogs.db"
+from database import get_connection
 
 
 def save_metrics(
@@ -15,7 +14,7 @@ def save_metrics(
     time_taken=None,
     improvement_delta=None   
 ):
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -43,7 +42,7 @@ def save_metrics(
 
 
 def get_metrics_summary():
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     # ✅ Basic success metrics
@@ -160,7 +159,7 @@ def get_metrics_summary():
     }
 
 def get_top_topics(limit=3):
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -177,7 +176,7 @@ def get_top_topics(limit=3):
     return [r[0] for r in rows]
 
 def get_low_performing_topics(limit=3):
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("""

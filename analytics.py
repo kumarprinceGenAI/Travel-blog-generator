@@ -1,14 +1,15 @@
 import sqlite3
 import numpy as np
+from database import get_connection
 
-DB_NAME = "blogs.db"
+
 
 
 # -------------------------------
 # 1. SCORE DISTRIBUTION
 # -------------------------------
 def get_score_distribution():
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("SELECT score FROM metrics")
@@ -37,7 +38,7 @@ def get_score_distribution():
 # 2. REGRESSION DETECTION
 # -------------------------------
 def detect_regression(window=5):
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     # Recent scores
@@ -85,7 +86,7 @@ def detect_regression(window=5):
 # 3. COMPONENT PERFORMANCE
 # -------------------------------
 def component_performance():
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -117,7 +118,7 @@ def component_performance():
 # 4. SCORE STABILITY
 # -------------------------------
 def score_stability():
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("SELECT score FROM metrics WHERE score IS NOT NULL")

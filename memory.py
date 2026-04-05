@@ -2,15 +2,14 @@ import sqlite3
 import pickle
 
 from embedding import get_embedding, cosine_similarity
-
-DB_NAME = "blogs.db"
+from database import get_connection
 
 SIM_THRESHOLD = 0.85
 
 
 # ✅ EXISTING (unchanged)
 def is_duplicate(topic: str) -> bool:
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute(
@@ -26,7 +25,7 @@ def is_duplicate(topic: str) -> bool:
 
 # 🔥 NEW — SEMANTIC DUPLICATE
 def is_semantic_duplicate(topic: str) -> bool:
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     new_emb = get_embedding(topic)

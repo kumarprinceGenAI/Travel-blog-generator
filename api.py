@@ -1,31 +1,57 @@
 from fastapi import FastAPI, HTTPException
 from graph import graph
-from storage import get_blogs, get_blog
+from storage import get_blogs, get_blog, get_latest_blog, get_blog_by_slug
 from metrics import get_metrics_summary
+from scheduler import run_job
+from database import init_db,get_connection
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
 
-#  Health check
+# =========================
+# ✅ DB INIT (CORRECT WAY)
+# =========================
+@app.on_event("startup")
+def startup():
+    init_db()
+
+
+# =========================
+# HEALTH CHECK
+# =========================
 @app.get("/")
 def home():
-    return {"message": "Travel Blog Generator API is running"}
+    try:
+        conn = get_connection()
+        conn.execute("SELECT 1")
+        conn.close()
+        return {"status": "ok"}
+    except:
+        return {"status": "db_error"}
 
 
-#  Manual blog generation (keep this)
+# =========================
+# GENERATE BLOG
+# =========================
+
 @app.post("/generate-blog")
 def generate_blog():
-    result = graph.invoke({})
+    try:
+        success = run_job()
+        if not success:
+            raise HTTPException(
+                status_code=500,
+                detail="Blog generation failed"
+            )
 
-    return {
-        "topic": result.get("topic"),
-        "blog": result.get("blog"),
-        "html": result.get("html"),
-        "seo": result.get("seo")
-    }
-
-
-#  NEW: Get all blogs (summary)
+        return {"status": "success"}
+    except Exception as e:
+        return {"status": "failed", "error": str(e)}
+    
+# =========================
+# GET ALL BLOGS (SUMMARY)
+# =========================
 @app.get("/blogs")
 def fetch_blogs():
     blogs = get_blogs()
@@ -34,27 +60,56 @@ def fetch_blogs():
         {
             "id": b["id"],
             "topic": b["topic"],
-            "created_at": b["created_at"]
+            "created_at": b["created_at"],
+            "slug": b["slug"]   # ✅ FIXED
         }
         for b in blogs
     ]
 
 
-# NEW: Get single blog (full content)
-@app.get("/blog/{blog_id}")
-def fetch_blog(blog_id: int):
-    blog = get_blog(blog_id)
+# =========================
+# GET SINGLE BLOG
+# =========================
+
+
+# @app.get("/blog/{blog_id}", response_class=HTMLResponse)
+# def fetch_blog(blog_id: int):
+#     blog = get_blog(blog_id)
+
+#     if not blog:
+#         raise HTTPException(status_code=404, detail="Blog not found")
+
+#     return blog.get("html", "")
+
+
+# =========================
+# METRICS
+# =========================
+@app.get("/metrics")
+def metrics():
+    return get_metrics_summary()
+
+
+# =========================
+# LATEST BLOG
+# =========================
+
+
+@app.get("/latest-blog", response_class=HTMLResponse)
+def latest_blog():
+    blog = get_latest_blog()
+
+    if not blog:
+        return "<h1>No blogs available</h1>"
+
+    return blog.get("html", "")
+
+
+@app.get("/blog/{slug}")
+def fetch_blog(slug: str):
+    blog = get_blog_by_slug(slug)
 
     if not blog:
         raise HTTPException(status_code=404, detail="Blog not found")
 
     return blog
-
-@app.get("/metrics")
-def metrics():
-    return get_metrics_summary()
-
-@app.get("/latest-blog")
-def latest_blog():
-    from storage import get_latest_blog
-    return get_latest_blog()

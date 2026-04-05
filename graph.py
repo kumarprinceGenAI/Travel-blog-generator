@@ -7,6 +7,7 @@ from reviewer import reviewer_agent
 from improver import improver_agent
 from seo import seo_agent
 from researcher import researcher_agent, calculate_score
+from image_agent import generate_images_for_blog
 
 from memory import is_duplicate, save_topic, is_semantic_duplicate
 from storage import save_blog
@@ -22,6 +23,8 @@ from embedding import get_embedding
 import pickle
 import sqlite3
 from linking_engine import get_related_topics, inject_internal_links
+from renderer import render_html
+from database import get_connection
 
 
 # =========================
@@ -39,11 +42,31 @@ class BlogState(TypedDict, total=False):
     start_time: float
     initial_score: float
     final_score: float
+    images:list
 
 
 # =========================
 # NODES
 # =========================
+
+def image_node(state):
+    logger.info("Image generation started")
+
+    try:
+        images = generate_images_for_blog(state["blog"])
+
+        if images:
+            state["images"] = images
+            logger.info(f"[Images] Attached {len(images)} images")
+        else:
+            state["images"] = []
+            logger.warning("[Images] No images attached")
+
+    except Exception as e:
+        logger.error(f"[Images] Failed: {str(e)}")
+        state["images"] = []
+
+    return state
 
 def is_overused_theme(title: str):
     title_lower = title.lower()
@@ -290,8 +313,18 @@ def seo_node(state):
 def render_node(state):
     logger.info("Rendering HTML")
 
-    from renderer import render_html
-    state["html"] = render_html(state["blog"])
+    html = render_html(
+        state.get("blog"),
+        state.get("images")
+    )
+
+    if not html:
+        logger.error("HTML generation failed")
+        state["html"] = ""
+    else:
+        state["html"] = html
+
+    logger.info(f"[Renderer] HTML length: {len(state['html'])}")
 
     return state
 
@@ -323,17 +356,18 @@ def save_node(state):
     
 
     data = {
-        "topic": state.get("topic"),
-        "blog": state.get("blog"),
-        "html": state.get("html"),
-        "seo": state.get("seo"),
-    }
+    "topic": state.get("topic"),
+    "blog": state.get("blog"),
+    "html": state.get("html"),
+    "seo": state.get("seo"),
+    "images": state.get("images", [])   # 🔥 THIS WAS MISSING
+        }
     save_blog(data)
 
     embedding = get_embedding(state["topic"])
 
     if embedding is not None:
-        conn = sqlite3.connect("blogs.db")
+        conn = get_connection()
         cursor = conn.cursor()
 
         cursor.execute(
@@ -443,6 +477,7 @@ builder.add_node("improver", improver_node)
 builder.add_node("seo", seo_node)
 builder.add_node("renderer", render_node)
 builder.add_node("save", save_node)
+builder.add_node("images",image_node,)
 
 builder.add_edge(START, "researcher")
 builder.add_edge("researcher", "planner")
@@ -459,7 +494,8 @@ builder.add_conditional_edges(
 )
 
 builder.add_edge("improver", "reviewer")
-builder.add_edge("seo", "renderer")
+builder.add_edge("seo", "images")
+builder.add_edge("images","renderer")
 builder.add_edge("renderer", "save")
 builder.add_edge("save", END)
 

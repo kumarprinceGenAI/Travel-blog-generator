@@ -1,12 +1,13 @@
 import sqlite3
 import pickle
+from database import get_connection
 from embedding import get_embedding, cosine_similarity
 
-DB_NAME = "blogs.db"
+
 
 
 def get_related_topics(current_topic, top_k=3):
-    conn = sqlite3.connect(DB_NAME)
+    conn = get_connection()
     cursor = conn.cursor()
 
     current_emb = get_embedding(current_topic)
