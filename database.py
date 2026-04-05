@@ -1,17 +1,8 @@
 import sqlite3
 import os
 
-# ✅ Persistent path (Render disk)
-# if os.name == "nt":
-#     DB_PATH = "blogs.db"
-# else:
-#     DB_PATH = "/var/data/blogs.db"
 
-# if not os.path.exists("/var/data"):
-#     os.makedirs("/var/data")
-
-# DB_PATH = "blogs.db"
-DB_PATH = os.getenv("DB_PATH", "/tmp/blogs.db")
+DB_PATH = os.getenv("DB_PATH", "blogs.db")
 
 def get_connection():
     conn = sqlite3.connect(DB_PATH, check_same_thread=False)
